@@ -15,7 +15,7 @@
     </script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-    </script>
+        </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 
@@ -25,7 +25,7 @@
         Agent Arena V2: Updated Dataset Release
     </title>
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
     <link rel="stylesheet" href="../assets/css/blog.css" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
@@ -37,9 +37,11 @@
             border-radius: 4px;
             padding: 10px;
         }
+
         code {
             font-family: Consolas, Monaco, 'Andale Mono', monospace;
         }
+
         body {
             font-family: "Source Sans Pro", sans-serif;
             margin: 0;
@@ -176,14 +178,17 @@
         .citation-container {
             font-family: Arial, sans-serif;
         }
+
         .citation-title {
             font-weight: bold;
             margin-bottom: 10px;
         }
+
         .citation-intro {
             color: #444;
             margin-bottom: 20px;
         }
+
         .citation-block {
             white-space: pre-wrap;
             width: 100%;
@@ -205,6 +210,7 @@
             gap: 10px;
             margin-bottom: 20px;
         }
+
         .author {
             white-space: nowrap;
             color: #1e90ff;
@@ -223,12 +229,12 @@
         }
 
         .quote-block {
-            border-left: 4px solid #d3d3d3;  
+            border-left: 4px solid #d3d3d3;
             padding-left: 16px;
             margin: 12px 0;
             font-style: italic;
-            background-color: #f7f7f7; 
-            color: #333; 
+            background-color: #f7f7f7;
+            color: #333;
             border-radius: 4px;
             padding-top: 8px;
             padding-bottom: 8px;
@@ -241,20 +247,24 @@
             max-width: 100%;
             margin: 0 auto;
         }
-        #ranking-methodology h3, 
-        #ranking-methodology h4, 
+
+        #ranking-methodology h3,
+        #ranking-methodology h4,
         #ranking-methodology h5 {
             color: #2c3e50;
             margin-top: 1.5em;
             margin-bottom: 0.5em;
         }
+
         #ranking-methodology p {
             margin-bottom: 1em;
         }
+
         #ranking-methodology ul {
             padding-left: 20px;
             margin-bottom: 1em;
         }
+
         #ranking-methodology .equation-block {
             background-color: #f8f8f8;
             border: 1px solid #e0e0e0;
@@ -263,9 +273,10 @@
             margin: 20px auto;
             max-width: 80%;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow-x: auto;
         }
+
         #ranking-methodology .equation-block pre {
             margin: 0;
             white-space: pre-wrap;
@@ -276,11 +287,13 @@
             border: none;
             padding: 0;
         }
+
         @media (max-width: 768px) {
             #ranking-methodology .equation-block {
                 max-width: 95%;
             }
         }
+
         @media (max-width: 768px) {
             .equation-block {
                 max-width: 95%;
@@ -355,13 +368,16 @@
                     <h4 class="text-center" style="margin: 0px;">
                         <p></p>
                         <!-- Authors can be modified accordingly -->
-                        <a class="author" href="https://www.linkedin.com/in/nithik-yekollu-7298671a8/">Nithik Yekollu</a>
+                        <a class="author" href="https://www.linkedin.com/in/nithik-yekollu-7298671a8/">Nithik
+                            Yekollu</a>
                         <a class="author" href="https://www.linkedin.com/in/arthbohra/">Arth Bohra</a>
-                        <a class="author" href="https://www.linkedin.com/in/ashwin-chirumamilla-91103b1b5/">Ashwin Chirumamilla</a>
+                        <a class="author" href="https://www.linkedin.com/in/ashwin-chirumamilla-91103b1b5/">Ashwin
+                            Chirumamilla</a>
                         <a class="author" href="https://www.linkedin.com/in/kaiwen129/">Kai Wen</a>
                         <a class="author" href="https://www.linkedin.com/in/saikolasani/">Sai Kolasani</a>
                         <a class="author" href="https://infwinston.github.io/">Wei-Lin Chiang</a>
-                        <a class="author" href="https://people.eecs.berkeley.edu/~angelopoulos//">Anastasios Angelopoulos</a>
+                        <a class="author" href="https://people.eecs.berkeley.edu/~angelopoulos//">Anastasios
+                            Angelopoulos</a>
                         <a class="author" href="https://people.eecs.berkeley.edu/~jegonzal/">Joseph Gonzalez</a>
                         <a class="author" href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a>
                         <a class="author" href="https://people.eecs.berkeley.edu/~shishirpatil/">Shishir G. Patil</a>
@@ -372,221 +388,406 @@
                 <div class="preview">
                     <h2 id="introduction">Introduction</h2>
                     <p>
-                        Since its release last month, the Agent Arena has gathered over <strong>500 new user-submitted ratings</strong>, bringing our total to an impressive <strong>2,671 pairwise comparisons</strong>. This expansion is particularly noteworthy 🎉 as it permits the publication of a <strong>new dataset of battle results</strong> in tandem with an updated Elo-based rating system for evaluating agents.
+                        Since its release last month, the Agent Arena has gathered over <strong>500 new user-submitted
+                            ratings</strong>, bringing our total to an impressive <strong>2,671 pairwise
+                            comparisons</strong>. This expansion is particularly noteworthy 🎉 as it permits the
+                        publication of a <strong>new dataset of battle results</strong> in tandem with an updated
+                        Elo-based rating system for evaluating agents.
                     </p>
                     <p style="margin-left: 40px;">
-                        As part of this update, we are also sharing an interactive notebook to aid users in exploring these ratings and uncover deeper insights into our evolving rankings. You may access the new battle dataset and the Elo calculation notebook here:
+                        As part of this update, we are also sharing an interactive notebook to aid users in exploring
+                        these ratings and uncover deeper insights into our evolving rankings. You may access the new
+                        battle dataset and the Elo calculation notebook here:
                         <br>
                         <strong><em>
-                            Agent Arena Evaluation Resources:
-                            <br>
-                            <a href="https://github.com/ShishirPatil/gorilla/tree/main/agent-arena/evalutation" target="_blank">
-                                https://github.com/ShishirPatil/gorilla/tree/main/agent-arena/evalutation
-                            </a>
-                        </em></strong>
+                                Agent Arena Evaluation Resources:
+                                <br>
+                                <a href="https://github.com/ShishirPatil/gorilla/tree/main/agent-arena/evalutation"
+                                    target="_blank">
+                                    https://github.com/ShishirPatil/gorilla/tree/main/agent-arena/evalutation
+                                </a>
+                            </em></strong>
                     </p>
                     <p>
-                        In this blog, we aim to <strong>look beyond raw metrics</strong> and address the question of why certain agents and their subcomponents continue to outperform others. By leveraging our newly updated battle data, we delve into critical insights across several dimensions:
+                        In this blog, we aim to <strong>look beyond raw metrics</strong> and address the question of why
+                        certain agents and their subcomponents continue to outperform others. By leveraging our newly
+                        updated battle data, we delve into critical insights across several dimensions:
                     </p>
                     <ul>
-                        <li><strong>Analysis of Models:</strong> Why do models such as Llama-70B and Open-Mixtral-8x7B excel at agentic tasks? How do they contrast with lower-performing models like Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002?</li>
-                        <li><strong>Framework Comparisons:</strong> What sets frameworks such as LlamaIndex apart from LangChain or CrewAI? We highlight direct battles to illustrate specific advantages and weaknesses.</li>
-                        <li><strong>Domain-Specific Insights:</strong> Which models or frameworks excel in specialized contexts (e.g., finance, code, or research)? We analyze how the leaderboard evolves when filtered by domain, identifying salient performance patterns.</li>
-                        <li><strong>Win Rate Analysis:</strong> We detail the influence of model-tool pairings—code interpreters, search engines, and more—and explain why the correct synergy 🔑 can lead to substantially higher win rates.</li>
+                        <li><strong>Analysis of Models:</strong> Why do models such as Llama-70B and Open-Mixtral-8x7B
+                            excel at agentic tasks? How do they contrast with lower-performing models like
+                            Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002?</li>
+                        <li><strong>Framework Comparisons:</strong> What sets frameworks such as LlamaIndex apart from
+                            LangChain or CrewAI? We highlight direct battles to illustrate specific advantages and
+                            weaknesses.</li>
+                        <li><strong>Domain-Specific Insights:</strong> Which models or frameworks excel in specialized
+                            contexts (e.g., finance, code, or research)? We analyze how the leaderboard evolves when
+                            filtered by domain, identifying salient performance patterns.</li>
+                        <li><strong>Win Rate Analysis:</strong> We detail the influence of model-tool pairings—code
+                            interpreters, search engines, and more—and explain why the correct synergy 🔑 can lead to
+                            substantially higher win rates.</li>
                     </ul>
                     <p>
-                        We further showcase instances in which two agents converge on the same correct solution but via distinct reasoning styles 🤔, as well as cases of pronounced disagreement that underscore the significance of deep reasoning. Let us now proceed with a thorough examination of the new data and the key insights it reveals.
+                        We further showcase instances in which two agents converge on the same correct solution but via
+                        distinct reasoning styles 🤔, as well as cases of pronounced disagreement that underscore the
+                        significance of deep reasoning. Let us now proceed with a thorough examination of the new data
+                        and the key insights it reveals.
                     </p>
                 </div>
 
                 <h2 id="elo-updates">💯 ELO-Based Rating Updates</h2>
                 <p>
-                    With over 2,500 user-submitted battles, we have refined our Elo-based rating methodology to evaluate not only agents as holistic entities but also subcomponents—including models, frameworks, and tools. This granular approach offers a clearer understanding of which factors drive success or impede performance.
+                    With over 2,500 user-submitted battles, we have refined our Elo-based rating methodology to evaluate
+                    not only agents as holistic entities but also subcomponents—including models, frameworks, and tools.
+                    This granular approach offers a clearer understanding of which factors drive success or impede
+                    performance.
                 </p>
                 <p>
-                    Below is a concise summary of the top- and bottom-rated subcomponents identified in our updated leaderboard:
+                    Below is a concise summary of the top- and bottom-rated subcomponents identified in our updated
+                    leaderboard:
                 </p>
                 <ul>
                     <li><strong>Top-Rated Tool:</strong> riza-code-interpreter (ELO: 1228.03)</li>
                     <ul>
-                        <li><em>Example from Dataset:</em> Highly effective in tasks requiring structured computation or code-driven data analysis, thanks to deterministic outputs.</li>
-                        <li><em>Why It Shines:</em> Code interpreters generally excel at well-defined tasks where step-by-step calculations minimize ambiguity and user guesswork 📐.</li>
+                        <li><em>Example from Dataset:</em> Highly effective in tasks requiring structured computation or
+                            code-driven data analysis, thanks to deterministic outputs.</li>
+                        <li><em>Why It Shines:</em> Code interpreters generally excel at well-defined tasks where
+                            step-by-step calculations minimize ambiguity and user guesswork 📐.</li>
                     </ul>
                     <li><strong>Low-Rated Tool:</strong> google-lens (ELO: 798.16)</li>
                     <ul>
-                        <li><em>Example from Dataset:</em> Encountered recurring issues in complex or multi-step prompts mixing image and textual analysis.</li>
-                        <li><em>Why It Struggles:</em> A narrower focus on image recognition limits adaptability when tasks require extensive textual reasoning or advanced context.</li>
+                        <li><em>Example from Dataset:</em> Encountered recurring issues in complex or multi-step prompts
+                            mixing image and textual analysis.</li>
+                        <li><em>Why It Struggles:</em> A narrower focus on image recognition limits adaptability when
+                            tasks require extensive textual reasoning or advanced context.</li>
                     </ul>
                     <li><strong>Top-Rated Model:</strong> llama-3.1-70B-instruct (ELO: 1045.42)</li>
                     <ul>
-                        <li><em>Example from Dataset:</em> Repeatedly showcases robust reasoning and contextual awareness, from summarizing research papers to advanced code usage.</li>
-                        <li><em>Why It Excels:</em> Larger-parameter models typically handle complex instructions with higher accuracy and deeper cross-domain awareness.</li>
+                        <li><em>Example from Dataset:</em> Repeatedly showcases robust reasoning and contextual
+                            awareness, from summarizing research papers to advanced code usage.</li>
+                        <li><em>Why It Excels:</em> Larger-parameter models typically handle complex instructions with
+                            higher accuracy and deeper cross-domain awareness.</li>
                     </ul>
                     <li><strong>Low-Rated Model:</strong> gemini-1.5-pro-002 (ELO: 950.74)</li>
                     <ul>
-                        <li><em>Example from Dataset:</em> Often fails on tasks needing multi-step logic or specialized knowledge, reverting to shallow or repetitive content.</li>
-                        <li><em>Why It Struggles:</em> Smaller parameter sizes or less domain-oriented training can reduce its ability to perform in-depth analyses or combine multiple data sources.</li>
+                        <li><em>Example from Dataset:</em> Often fails on tasks needing multi-step logic or specialized
+                            knowledge, reverting to shallow or repetitive content.</li>
+                        <li><em>Why It Struggles:</em> Smaller parameter sizes or less domain-oriented training can
+                            reduce its ability to perform in-depth analyses or combine multiple data sources.</li>
                     </ul>
                     <li><strong>Top-Rated Framework:</strong> llamaindex (ELO: 1086.73)</li>
                     <ul>
-                        <li><em>Example from Dataset:</em> Adept with SQL queries and multi-source retrieval, consistently outperforming generalized frameworks in tasks demanding precision.</li>
-                        <li><em>Why It Leads:</em> LlamaIndex emphasizes structured indexing and retrieval, a methodology that translates to refined solutions for demanding enterprise or research environments.</li>
+                        <li><em>Example from Dataset:</em> Adept with SQL queries and multi-source retrieval,
+                            consistently outperforming generalized frameworks in tasks demanding precision.</li>
+                        <li><em>Why It Leads:</em> LlamaIndex emphasizes structured indexing and retrieval, a
+                            methodology that translates to refined solutions for demanding enterprise or research
+                            environments.</li>
                     </ul>
                     <li><strong>Low-Rated Framework:</strong> openai assistants (ELO: 943.28)</li>
                     <ul>
-                        <li><em>Example from Dataset:</em> Frequently produced broad or generic statements when confronted with multilayered tasks or code-based queries.</li>
-                        <li><em>Why It Lags:</em> Lacking advanced functionality or fallback strategies, openai assistants often fail to execute the complex reasoning users require.</li>
+                        <li><em>Example from Dataset:</em> Frequently produced broad or generic statements when
+                            confronted with multilayered tasks or code-based queries.</li>
+                        <li><em>Why It Lags:</em> Lacking advanced functionality or fallback strategies, openai
+                            assistants often fail to execute the complex reasoning users require.</li>
                     </ul>
                 </ul>
 
                 <h2 id="analysis-of-models">🔎 Analysis of Models</h2>
                 <p>
-                    Our most recent battle data highlights the strengths of <strong>Llama-70B</strong> and <strong>Open-Mixtral-8x7B</strong>, as well as the persistent shortcomings of <strong>Llama-3.1-8B-Instruct</strong> and <strong>Gemini-1.5-Pro-002</strong>. Domain adaptation, multi-step logic, and robust tool usage are key variables influencing these outcomes, as demonstrated by the examples that follow.
+                    Our most recent battle data highlights the strengths of <strong>Llama-70B</strong> and
+                    <strong>Open-Mixtral-8x7B</strong>, as well as the persistent shortcomings of
+                    <strong>Llama-3.1-8B-Instruct</strong> and <strong>Gemini-1.5-Pro-002</strong>.
                 </p>
 
                 <h4>Why Some Models Excel</h4>
                 <p>
-                    <strong>1) Multi-Step Reasoning & Contextual Depth</strong><br/>
-                    Models like <em>Llama-70B</em> exhibit notable aptitude in resolving layered prompts that demand reasoning across multiple data points, culminating in a logically structured answer.
+                    <strong>
+                        <h5>Llama-70B</h5>
+                    </strong><br />
+                    Models like <em>Llama-70B</em> exhibit notable aptitude in resolving layered prompts that demand
+                    reasoning across multiple data points, culminating in a logically structured answer.
                 </p>
                 <blockquote class="quote-block">
-                    <strong>Prompt:</strong> "Analyze the dataset of global carbon emissions over the past decade and identify the top three contributing industries. Propose actionable strategies for reducing emissions in each industry."
+                    <strong>Prompt:</strong> "How does the greenhouse effect contribute to climate change?"
                 </blockquote>
+                <div class="code-toggle" onclick="toggleCode('carbon_emissions_output')">+ Prompt Execution</div>
+                <pre id="carbon_emissions_output" style="display:none; white-space: pre; text-align: left;">
+                    <code>
+                    {
+                        "Prompt": "How does the greenhouse effect contribute to climate change?",
+                        "Agent_A": {
+                            "Agent name": "langchain google-serper search agent (gemini-1.5-pro-001)",
+                            "Code executed": "from langchain.agents import AgentType, initialize_agent, load_tools\nfrom langchain_google_vertexai import ChatVertexAI\nfrom google.oauth2 import service_account\nfrom google.cloud import aiplatform\nfrom langchain_google_vertexai import ChatVertexAI\n\nimport os\n\ncredentials_info = {\n    \"type\": \"service_account\",\n    \"project_id\": os.getenv(\"GOOGLE_CLOUD_PROJECT_ID\"),\n    \"private_key_id\": os.getenv(\"GOOGLE_CLOUD_PRIVATE_KEY_ID\"),\n    \"private_key\": os.getenv(\"GOOGLE_CLOUD_PRIVATE_KEY\").replace(\"\\\\n\", \"\\n\"),\n    \"client_email\": os.getenv(\"GOOGLE_CLOUD_CLIENT_EMAIL\"),\n    \"client_id\": os.getenv(\"GOOGLE_CLOUD_CLIENT_ID\"),\n    \"auth_uri\": os.getenv(\"GOOGLE_CLOUD_AUTH_URI\"),\n    \"token_uri\": os.getenv(\"GOOGLE_CLOUD_TOKEN_URI\"),\n    \"auth_provider_x509_cert_url\": os.getenv(\"GOOGLE_CLOUD_AUTH_PROVIDER_CERT_URL\"),\n    \"client_x509_cert_url\": os.getenv(\"GOOGLE_CLOUD_CLIENT_CERT_URL\"),\n}\n\n\ncredentials = service_account.Credentials.from_service_account_info(credentials_info)\naiplatform.init(project=os.getenv(\"GOOGLE_CLOUD_PROJECT_ID\"), credentials=credentials)\n\n# Initialize Vertex AI\nllm = ChatVertexAI(model_name=\"gemini-1.5-pro-001\", credentials=credentials)\n\ntools = load_tools([\"google-serper\"], llm=llm)\n\nagent = initialize_agent(\n    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True, handle_parsing_errors=True\n)\n\nagent.run(\"How does the greenhouse effect contribute to climate change?\")",
+                            "Agent output": "/tmp/c1974517-7421-4da4-9476-8bef08eeccd2.py:1: > Entering new AgentExecutor chain...>> from langchain.agents import load_toolsQuestion: How does the greenhouse effect contribute to climate change?Thought: I need to find information about the greenhouse effect and climate change.with new imports of:Action: google_serperAction Input: How does the greenhouse effect contribute to climate change?>> from langchain_community.agent_toolkits.load_tools import load_toolsObservation: The main driver of climate change is the greenhouse effect. Some gases in the Earth's atmosphere act a bit like the glass in a greenhouse, trapping the sun's heat and stopping it from leaking back into space and causing global warming.You can use the langchain cli to **automatically** upgrade many imports. Please see documentation here Thought:Thought: The observation explains how the greenhouse effect works and its connection to climate change.   from langchain.agents import AgentType, initialize_agent, load_toolsFinal Answer: The greenhouse effect contributes to climate change by trapping the sun's heat in the Earth's atmosphere, preventing it from escaping back into space. This leads to a gradual warming of the planet, known as global warming. /tmp/c1974517-7421-4da4-9476-8bef08eeccd2.py:31:   agent = initialize_agent(/tmp/c1974517-7421-4da4-9476-8bef08eeccd2.py:35: >   agent.run(\"How does the greenhouse effect contribute to climate change?\")",
+                            "Frameworks": [
+                                "langchain"
+                            ],
+                            "Models": [
+                                "gemini-1.5-pro-001"
+                            ],
+                            "Tools": [
+                                "google-serper"
+                            ],
+                            "Category": [
+                                "Math/CS Academic Search",
+                                "Search Engines",
+                                "Simple Math",
+                                "Knowledge Bases"
+                            ],
+                            "Tool Categories": [
+                                "Search Engines",
+                                "Simple Math",
+                                "Knowledge Bases",
+                                "Math/CS Academic Search"
+                            ]
+                        },
+                        "Agent_B": {
+                            "Agent name": "langchain Wikipedia (llama-3.1-70B-instruct)",
+                            "Code executed": "import subprocess\nimport sys\n\n# Ensure the required packages are installed\nrequired_packages = [\n    \"wikipedia\"\n]\n\nfor package in required_packages:\n    try:\n        subprocess.check_call([sys.executable, \"-m\", \"pip\", \"install\", package])\n    except subprocess.CalledProcessError as e:\n        print(f\"Failed to install {package}: {e}\")\n        sys.exit(1)\n\n# Now import the necessary modules\ntry:\n    from langchain.tools import WikipediaQueryRun\n    from langchain_community.utilities import WikipediaAPIWrapper\n    from langchain.agents import initialize_agent\n    from langchain_together import ChatTogether\nexcept ImportError as e:\n    print(f\"Error importing modules: {e}\")\n    sys.exit(1)\n\n# Initialize the Wikipedia API Wrapper and LLM\nwikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())\nllm = ChatTogether(model=\"meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo\")\n\n# Initialize the agent with the tool\ntools = [wikipedia]\nagent = initialize_agent(tools, llm, agent=\"zero-shot-react-description\", verbose=True, handle_parsing_errors=True)\n\n# Execute the agent with a query\ntry:\n    output = agent.run(\"How does the greenhouse effect contribute to climate change?\")\n    print(output)\nexcept Exception as e:\n    print(f\"Error executing the agent: {e}\")",
+                            "Agent output": "[notice] A new release of pip is available: 24.0 -> 24.2[notice] To update, run: pip install --upgrade pip/opt/render/project/src/.venv/lib/python3.11/site-packages/langchain/tools/__init__.py:73: `from langchain_community.tools import WikipediaQueryRun`.To install langchain-community run `pip install -U langchain-community`.  warnings.warn(/tmp/0a19d23a-e57d-47cf-beb6-12b3006646e2.py:32: > Entering new AgentExecutor chain...  agent = initialize_agent(tools, llm, agent=\"zero-shot-react-description\", verbose=True, handle_parsing_errors=True)Thought: To answer this question, I need to find information on the greenhouse effect and its relationship with climate change./tmp/0a19d23a-e57d-47cf-beb6-12b3006646e2.py:36:   output = agent.run(\"How does the greenhouse effect contribute to climate change?\")Action: wikipediaAction Input: Greenhouse effect and climate changeObservation: Page: Runaway greenhouse effectSummary: A runaway greenhouse effect will occur when a planet's atmosphere contains greenhouse gas in an amount sufficient to block thermal radiation from leaving the planet, preventing the planet from cooling and from having liquid water on its surface. A runaway version of the greenhouse effect can be defined by a limit on a planet's outgoing longwave radiation which is asymptotically reached due to higher surface temperatures evaporating water into the atmosphere, increasing its optical depth. This positive feedback means the planet cannot cool down through longwave radiation (via the Stefan\u2013Boltzmann law) and continues to heat up until it can radiate outside of the absorption bands of the water vapour.The runaway greenhouse effect is often formulated with water vapour as the condensable species. The water vapour reaches the stratosphere and escapes into space via hydrodynamic escape, resulting in a desiccated planet. This likely happened in the early history of Venus.Research in 2012 found that almost all lines of evidence indicate that it is unlikely to be possible to trigger a full runaway greenhouse on Earth by adding greenhouse gases to the atmosphere. However, the authors cautioned that \"our understanding of the dynamics, thermodynamics, radiative transfer and cloud physics of hot and steamy atmospheres is weak\", and that we \"cannot therefore completely rule out the possibility that human actions might cause a transition, if not to full runaway, then at least to a much warmer climate state than the present one\". A runaway greenhouse effect similar to Venus appears to have virtually no chance of being caused by people. A 2013 article concluded that runaway greenhouse \"could in theory be triggered by increased greenhouse forcing\", but that \"anthropogenic emissions are probably insufficient\". Venus-like conditions on Earth require a large long-term forcing that is unlikely to occur until the sun brightens by some tens of percents, which will take a few billion years. Earth is expected to experience a runaway greenhouse effect \"in about 2 billion years as solar luminosity increases\".Page: Greenhouse effectSummary: The greenhouse effect occurs when greenhouse gases in a planet's atmosphere insulate the planet from losing heat to space, raising its surface temperature. Surface heating can happen from an internal heat source as in the case of Jupiter, or from its host star as in the case of the Earth. In the case of Earth, the Sun emits shortwave radiation (sunlight) that passes through greenhouse gases to heat the Earth's surface. In response, the Earth's surface emits longwave radiation that is mostly absorbed by greenhouse gases. The absorption of longwave radiation prevents it from reaching space, reducing the rate at which the Earth can cool off.Without the greenhouse effect, the Earth's average surface temperature would be about \u221218 \u00b0C (\u22120.4 \u00b0F), compared to the 20th century average of about 14 \u00b0C (57 \u00b0F), or a more recent average of about 15 \u00b0C (59 \u00b0F). In addition to naturally present greenhouse gases, burning of fossil fuels has increased amounts of carbon dioxide and methane in the atmosphere. As a result, global warming of about 1.2 \u00b0C (2.2 \u00b0F) has occurred since the Industrial Revolution, with the global average surface temperature increasing at a rate of 0.18 \u00b0C (0.32 \u00b0F) per decade since 1981.All objects with a temperature above absolute zero emit thermal radiation. The wavelengths of thermal radiation emitted by the Sun and Earth differ because their surface temperatures are different. The Sun has a surface temperature of 5,500 \u00b0C (9,900 \u00b0F), so it emits most of its energy as shortwave radiation in near-infrared and visible wavelengths (as sunlight). In contrast, Earth's surface has a much lower temperature, so it emits longwave radiation at mid- and far-infrared wavelengths. A gas is a greenhouse gas if it absorbs longwave radiation. Earth's atmosphere absorbs only 23% Thought:Thought: I now have a better understanding of the greenhouse effect and its relationship with climate change. The greenhouse effect occurs when greenhouse gases in the atmosphere insulate the planet from losing heat to space, raising its surface temperature. Human activities, such as burning fossil fuels, have increased the amount of greenhouse gases in the atmosphere, leading to global warming.Action: wikipediaAction Input: Greenhouse gases and climate changeObservation: Page: Climate change mitigationSummary: Climate change mitigation (or decarbonisation) is action to limit the greenhouse gases in the atmosphere that cause climate change. Climate change mitigation actions include conserving energy and replacing fossil fuels with clean energy sources. Secondary mitigation strategies include changes to land use and removing carbon dioxide (CO2) from the atmosphere. Current climate change mitigation policies are insufficient as they would still result in global warming of about 2.7 \u00b0C by 2100, significantly above the 2015 Paris Agreement's goal of limiting global warming to below 2 \u00b0C.  Solar energy and wind power can replace fossil fuels at the lowest cost compared to other renewable energy options. The availability of sunshine and wind is variable and can require electrical grid upgrades, such as using long-distance electricity transmission to group a range of power sources. Energy storage can also be used to even out power output, and demand management can limit power use when power generation is low. Cleanly generated electricity can usually replace fossil fuels for powering transportation, heating buildings, and running industrial processes. Certain processes are more difficult to decarbonise, such as air travel and cement production. Carbon capture and storage (CCS) can be an option to reduce net emissions in these circumstances, although fossil fuel power plants with CCS technology is currently a high cost climate change mitigation strategy.Human land use changes such as agriculture and deforestation cause about 1/4th of climate change. These changes impact how much CO2 is absorbed by plant matter and how much organic matter decays or burns to release CO2. These changes are part of the fast carbon cycle, whereas fossil fuels release CO2 that was buried underground as part of the slow carbon cycle. Methane is a short lived greenhouse gas that is produced by decaying organic matter and livestock, as well as fossil fuel extraction. Land use changes can also impact precipitation patterns and the reflectivity of the surface of the Earth. It is possible to cut emissions from agriculture by reducing food waste, switching to a more plant-based diet (also referred to as low-carbon diet), and by improving farming processes.Various policies can encourage climate change mitigation. Carbon pricing systems have been set up that either tax CO2 emissions or cap total emissions and trade emission credits. Fossil fuel subsidies can be eliminated in favor of clean energy subsidies, and incentives offered for installing energy efficiency measures or switching to electric power sources. Another issue is overcoming environmental objections when constructing new clean energy sources and making grid modifications.Page: Climate changeSummary: In common usage, climate change describes global warming\u2014the ongoing increase in global average temperature\u2014and its effects on Earth's climate system. Climate change in a broader sense also includes previous long-term changes to Earth's climate. The current rise in global average temperature is primarily caused by humans burning fossil fuels since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices add to greenhouse gases. These gases absorb some of the heat that the Earth radiates after it warms from sunlight, warming the lower atmosphere. Carbon dioxide, the primary greenhouse gas driving global warming, has grown by about 50% and is at levels unseen for millions of years.Climate change has an increasingly large impact on the environment. Deserts are expanding, while heat waves and wildfires are becoming more common. Amplified warming in the Arctic has contributed to thawing permafrost, retreat of glaciers and sea ice decline. Higher temperatures are also causing more intense storms, droughts, and other weather extremes. Rapid environmental change in mountains, coral reefs, and the Arctic is forcing many speciesThought:Thought: I now have a better understanding of the greenhouse effect and its relationship with climate change. Action: wikipediaAction Input: Greenhouse effect contribution to climate changeObservation: Page: Climate changeSummary: In common usage, climate change describes global warming\u2014the ongoing increase in global average temperature\u2014and its effects on Earth's climate system. Climate change in a broader sense also includes previous long-term changes to Earth's climate. The current rise in global average temperature is primarily caused by humans burning fossil fuels since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices add to greenhouse gases. These gases absorb some of the heat that the Earth radiates after it warms from sunlight, warming the lower atmosphere. Carbon dioxide, the primary greenhouse gas driving global warming, has grown by about 50% and is at levels unseen for millions of years.Climate change has an increasingly large impact on the environment. Deserts are expanding, while heat waves and wildfires are becoming more common. Amplified warming in the Arctic has contributed to thawing permafrost, retreat of glaciers and sea ice decline. Higher temperatures are also causing more intense storms, droughts, and other weather extremes. Rapid environmental change in mountains, coral reefs, and the Arctic is forcing many species to relocate or become extinct. Even if efforts to minimize future warming are successful, some effects will continue for centuries. These include ocean heating, ocean acidification and sea level rise.Climate change threatens people with increased flooding, extreme heat, increased food and water scarcity, more disease, and economic loss. Human migration and conflict can also be a result. The World Health Organization calls climate change one of the biggest threats to global health in the 21st century. Societies and ecosystems will experience more severe risks without action to limit warming. Adapting to climate change through efforts like flood control measures or drought-resistant crops partially reduces climate change risks, although some limits to adaptation have already been reached. Poorer communities are responsible for a small share of global emissions, yet have the least ability to adapt and are most vulnerable to climate change.Many climate change impacts have been felt in recent years, with 2023 the warmest on record at +1.48 \u00b0C (2.66 \u00b0F) since regular tracking began in 1850. Additional warming will increase these impacts and can trigger tipping points, such as melting all of the Greenland ice sheet. Under the 2015 Paris Agreement, nations collectively agreed to keep warming \"well under 2 \u00b0C\". However, with pledges made under the Agreement, global warming would still reach about 2.7 \u00b0C (4.9 \u00b0F) by the end of the century. Limiting warming to 1.5 \u00b0C would require halving emissions by 2030 and achieving net-zero emissions by 2050.Fossil fuel use can be phased out by conserving energy and switching to energy sources that do not produce significant carbon pollution. These energy sources include wind, solar, hydro, and nuclear power. Cleanly generated electricity can replace fossil fuels for powering transportation, heating buildings, and running industrial processes. Carbon can also be removed from the atmosphere, for instance by increasing forest cover and farming with methods that capture carbon in soil.Page: History of climate change scienceSummary: The history of the scientific discovery of climate change began in the early 19th century when ice ages and other natural changes in paleoclimate were first suspected and the natural greenhouse effect was first identified. In the late 19th century, scientists first argued that human emissions of greenhouse gases could change Earth's energy balance and climate. The existence of the greenhouse effect, while not named as such, was proposed as early as 1824 by Joseph Fourier. The argument and the evidence were further strengthened by Claude Pouillet in 1827 and 1838. In 1856 Eunice Newton Foote demonstrated that the warming effect of the sun is greater for air with water vapour Thought:Thought: I now know the final answerFinal Answer: The greenhouse effect contributes to climate change by trapping heat in the atmosphere, leading to an increase in global average temperature. Human activities, such as burning fossil fuels, have increased the amount of greenhouse gases in the atmosphere, leading to global warming. The greenhouse effect is a natural process that occurs when greenhouse gases, such as carbon dioxide and methane, absorb longwave radiation from the Earth's surface and atmosphere, preventing it from escaping into space. This process is essential for life on Earth, as it keeps the planet warm enough to support life. However, human activities have increased the concentration of greenhouse gases in the atmosphere, leading to an enhancement of the natural greenhouse effect and an increase in global temperatures. Climate change has severe impacts on the environment, including rising sea levels, more frequent natural disasters, and changes in weather patterns. To mitigate climate change, it is essential to reduce greenhouse gas emissions by transitioning to renewable energy sources, increasing energy efficiency, and implementing policies to limit emissions.> The greenhouse effect contributes to climate change by trapping heat in the atmosphere, leading to an increase in global average temperature. Human activities, such as burning fossil fuels, have increased the amount of greenhouse gases in the atmosphere, leading to global warming. The greenhouse effect is a natural process that occurs when greenhouse gases, such as carbon dioxide and methane, absorb longwave radiation from the Earth's surface and atmosphere, preventing it from escaping into space. This process is essential for life on Earth, as it keeps the planet warm enough to support life. However, human activities have increased the concentration of greenhouse gases in the atmosphere, leading to an enhancement of the natural greenhouse effect and an increase in global temperatures. Climate change has severe impacts on the environment, including rising sea levels, more frequent natural disasters, and changes in weather patterns. To mitigate climate change, it is essential to reduce greenhouse gas emissions by transitioning to renewable energy sources, increasing energy efficiency, and implementing policies to limit emissions.",
+                            "Frameworks": [
+                                "langchain"
+                            ],
+                            "Models": [
+                                "llama-3.1-70B-instruct"
+                            ],
+                            "Tools": [
+                                "wikipedia"
+                            ],
+                            "Category": [
+                                "Math/CS Academic Search",
+                                "Knowledge Bases"
+                            ],
+                            "Tool Categories": [
+                                "Knowledge Bases",
+                                "Math/CS Academic Search"
+                            ]
+                        },
+                        "Rating": "B is better"
+                    }
+                    </code>
+                </pre>
                 <p>
-                    <strong>Outcome:</strong> <em>Llama-70B</em> systematically prioritized the industries and recommended feasible interventions such as renewable energy and improved logistics. <em>Gemini-1.5-Pro-002</em> offered surface-level overviews that failed to suggest domain-specific, solution-oriented plans.
+                    🌟 <strong>Outcome:</strong> Looking at this comparison, Agent B (llama-3.1-70B-instruct with
+                    Wikipedia) appears better for several reasons. Agent A (gemini-1.5-pro with Google Serper) provided
+                    a very brief, surface-level explanation, while Agent B offered a comprehensive explanation covering
+                    multiple aspects: the basic mechanism of the greenhouse effect, the natural vs enhanced greenhouse
+                    effect, human activities' impact, specific consequences like sea levels and weather patterns, and
+                    mitigation strategies. 🧠 Agent B included specific technical details such as the distinction
+                    between longwave and shortwave radiation, multiple greenhouse gases like CO2 and methane, and
+                    current mitigation approaches. 📚 Furthermore, Agent B provided a well-structured response that
+                    flowed logically from the basic mechanism to human impact, consequences, and solutions. 🔍 Agent B
+                    demonstrated a more thorough research process, making multiple Wikipedia queries to build a
+                    comprehensive understanding, whereas Agent A made a single search query and provided that
+                    information directly. In this case, llama-3.1-70B-instruct combined with Wikipedia as a knowledge
+                    base produced a more educational, scientifically accurate, and complete response compared to the
+                    gemini-1.5-pro with Google Serper search. 🌍
                 </p>
 
-                <p>
-                    <strong>2) Domain-Specific Optimization</strong><br/>
-                    <em>Open-Mixtral-8x7B</em> consistently performs better on tasks that rely on specialized knowledge retrieval or scientific rigor.
-                </p>
                 <blockquote class="quote-block">
-                    <strong>Prompt:</strong> "Explain the advancements in quantum computing in the last five years, focusing on their potential applications in cryptography and artificial intelligence."
+                    <strong>Prompt:</strong> "Explain the concept of opportunity cost in economics."
                 </blockquote>
+                <div class="code-toggle" onclick="toggleCode('opportunity_cost_output')">+ Prompt Execution</div>
+                <pre id="opportunity_cost_output" style="display:none; white-space: pre; text-align: left;">
+                    <code>
+                        {
+                            "Prompt": "Explain the concept of opportunity cost in economics.",
+                            "Agent_A": {
+                                "Agent name": "langchain Wikipedia (llama-3.1-70B-instruct)",
+                                "Code executed": "import subprocess\nimport sys\n\n# Ensure the required packages are installed\nrequired_packages = [\n    \"wikipedia\"\n]\n\nfor package in required_packages:\n    try:\n        subprocess.check_call([sys.executable, \"-m\", \"pip\", \"install\", package])\n    except subprocess.CalledProcessError as e:\n        print(f\"Failed to install {package}: {e}\")\n        sys.exit(1)\n\n# Now import the necessary modules\ntry:\n    from langchain.tools import WikipediaQueryRun\n    from langchain_community.utilities import WikipediaAPIWrapper\n    from langchain.agents import initialize_agent\n    from langchain_together import ChatTogether\nexcept ImportError as e:\n    print(f\"Error importing modules: {e}\")\n    sys.exit(1)\n\n# Initialize the Wikipedia API Wrapper and LLM\nwikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())\nllm = ChatTogether(model=\"meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo\")\n\n# Initialize the agent with the tool\ntools = [wikipedia]\nagent = initialize_agent(tools, llm, agent=\"zero-shot-react-description\", verbose=True, handle_parsing_errors=True)\n\n# Execute the agent with a query\ntry:\n    output = agent.run(\"424.\tExplain the concept of opportunity cost in economics.\")\n    print(output)\nexcept Exception as e:\n    print(f\"Error executing the agent: {e}\")",
+                                "Agent output": "[notice] A new release of pip is available: 24.0 -> 24.2[notice] To update, run: pip install --upgrade pip/opt/render/project/src/.venv/lib/python3.11/site-packages/langchain/tools/__init__.py:73: `from langchain_community.tools import WikipediaQueryRun`.To install langchain-community run `pip install -U langchain-community`.  warnings.warn(/tmp/6832ad2f-ad44-4ad4-bd0a-07ea1d89589a.py:32: > Entering new AgentExecutor chain...  agent = initialize_agent(tools, llm, agent=\"zero-shot-react-description\", verbose=True, handle_parsing_errors=True)Thought: To answer this question, I need to understand the concept of opportunity cost in economics. I can use Wikipedia to find information on this topic./tmp/6832ad2f-ad44-4ad4-bd0a-07ea1d89589a.py:36:   output = agent.run(\"424.\tExplain the concept of opportunity cost in economics.\")Action: wikipedia/opt/render/project/src/.venv/lib/python3.11/site-packages/wikipedia/wikipedia.py:389: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system (\"lxml\"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.Action Input: Opportunity costObservation: Page: Opportunity costThe code that caused this warning is on line 389 of the file /opt/render/project/src/.venv/lib/python3.11/site-packages/wikipedia/wikipedia.py. To get rid of this warning, pass the additional argument 'features=\"lxml\"' to the BeautifulSoup constructor.Summary: In microeconomic theory, the opportunity cost of a choice is the value of the best alternative forgone where, given limited resources, a choice needs to be made between several mutually exclusive alternatives. Assuming the best choice is made, it is the \"cost\" incurred by not enjoying the benefit that would have been had if the second best available choice had been taken instead. The New Oxford American Dictionary defines it as \"the loss of potential gain from other alternatives when one alternative is chosen\". As a representation of the relationship between scarcity and choice, the objective of opportunity cost is to ensure efficient use of scarce resources. It incorporates all associated costs of a decision, both explicit and implicit. Thus, opportunity costs are not restricted to monetary or financial costs: the real cost of output forgone, lost time, pleasure, or any other benefit that provides utility should also be considered an opportunity cost.  lis = BeautifulSoup(html).find_all('li')Page: Production\u2013possibility frontier/opt/render/project/src/.venv/lib/python3.11/site-packages/wikipedia/wikipedia.py:389: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system (\"lxml\"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.Summary: In microeconomics, a production\u2013possibility frontier (PPF), production possibility curve (PPC), or production possibility boundary (PPB) is a graphical representation showing all the possible options of output for two goods that can be produced using all factors of production, where the given resources are fully and efficiently utilized per unit time. A PPF illustrates several economic concepts, such as allocative efficiency, economies of scale, opportunity cost (or marginal rate of transformation), productive efficiency,  and scarcity of resources (the fundamental economic problem that all societies face). This tradeoff is usually considered for an economy, but also applies to each individual, household, and economic organization. One good can only be produced by diverting resources from other goods, and so by producing less of them.The code that caused this warning is on line 389 of the file /opt/render/project/src/.venv/lib/python3.11/site-packages/wikipedia/wikipedia.py. To get rid of this warning, pass the additional argument 'features=\"lxml\"' to the BeautifulSoup constructor.Graphically bounding the production set for fixed input quantities, the PPF curve shows the maximum possible production level of one commodity for any given production level of the other, given the existing state of technology. By doing so, it defines productive efficiency in the context of that production set: a point on the frontier indicates efficient use of the available inputs (such as points B, D and C in the graph), a point beneath the curve (such as A) indicates inefficiency, and a point beyond the curve (such as X) indicates impossibility.  lis = BeautifulSoup(html).find_all('li')PPFs are normally drawn as bulging upwards or outwards from the origin (\"concave\" when viewed from the origin), but they can be represented as bulging downward (inwards) or linear (straight), depending on a number of assumptions. An outward shift of the PPC results from growth of the availability of inputs, such as physical capital or labour, or from technological progress in knowledge of how to transform inputs into outputs. Such a shift reflects, for instance, economic growth of an economy already operating at its full productivity (on the PPF), which means that more of both outputs can now be produced during the specified period of time without sacrificing the output of either good. Conversely, the PPF will shift inward if the labour force shrinks, the supply of raw materials is depleted, or a natural disaster decreases the stock of physical capital.However, most economic contractions reflect not that less can be produced but that the economy has started operating below the frontier, as typically, both labour and physical capital are underemployed, remaining therefore idle.In microeconomics, the PPF shows the options open to an individual, household, or firm in a two-good world. By definition, each point on the curve is productively efficient, but, given the nature of market demand, some points will be more profitable than others. Equilibrium for a firm will be the combination of outputs on the PPF that is most profitable.From a macroeconomic perspective, the PPF illustrates the production possibilities available to Thought:Thought: I have found relevant information on opportunity cost, but I need to understand it better.Action: wikipediaAction Input: Opportunity costObservation: Page: Opportunity costSummary: In microeconomic theory, the opportunity cost of a choice is the value of the best alternative forgone where, given limited resources, a choice needs to be made between several mutually exclusive alternatives. Assuming the best choice is made, it is the \"cost\" incurred by not enjoying the benefit that would have been had if the second best available choice had been taken instead. The New Oxford American Dictionary defines it as \"the loss of potential gain from other alternatives when one alternative is chosen\". As a representation of the relationship between scarcity and choice, the objective of opportunity cost is to ensure efficient use of scarce resources. It incorporates all associated costs of a decision, both explicit and implicit. Thus, opportunity costs are not restricted to monetary or financial costs: the real cost of output forgone, lost time, pleasure, or any other benefit that provides utility should also be considered an opportunity cost.Page: Production\u2013possibility frontierSummary: In microeconomics, a production\u2013possibility frontier (PPF), production possibility curve (PPC), or production possibility boundary (PPB) is a graphical representation showing all the possible options of output for two goods that can be produced using all factors of production, where the given resources are fully and efficiently utilized per unit time. A PPF illustrates several economic concepts, such as allocative efficiency, economies of scale, opportunity cost (or marginal rate of transformation), productive efficiency,  and scarcity of resources (the fundamental economic problem that all societies face). This tradeoff is usually considered for an economy, but also applies to each individual, household, and economic organization. One good can only be produced by diverting resources from other goods, and so by producing less of them.Graphically bounding the production set for fixed input quantities, the PPF curve shows the maximum possible production level of one commodity for any given production level of the other, given the existing state of technology. By doing so, it defines productive efficiency in the context of that production set: a point on the frontier indicates efficient use of the available inputs (such as points B, D and C in the graph), a point beneath the curve (such as A) indicates inefficiency, and a point beyond the curve (such as X) indicates impossibility.PPFs are normally drawn as bulging upwards or outwards from the origin (\"concave\" when viewed from the origin), but they can be represented as bulging downward (inwards) or linear (straight), depending on a number of assumptions. An outward shift of the PPC results from growth of the availability of inputs, such as physical capital or labour, or from technological progress in knowledge of how to transform inputs into outputs. Such a shift reflects, for instance, economic growth of an economy already operating at its full productivity (on the PPF), which means that more of both outputs can now be produced during the specified period of time without sacrificing the output of either good. Conversely, the PPF will shift inward if the labour force shrinks, the supply of raw materials is depleted, or a natural disaster decreases the stock of physical capital.However, most economic contractions reflect not that less can be produced but that the economy has started operating below the frontier, as typically, both labour and physical capital are underemployed, remaining therefore idle.In microeconomics, the PPF shows the options open to an individual, household, or firm in a two-good world. By definition, each point on the curve is productively efficient, but, given the nature of market demand, some points will be more profitable than others. Equilibrium for a firm will be the combination of outputs on the PPF that is most profitable.From a macroeconomic perspective, the PPF illustrates the production possibilities available to Thought:Thought: I now know the final answerFinal Answer: The concept of opportunity cost in economics refers to the value of the best alternative forgone when a choice is made between several mutually exclusive alternatives. It is the \"cost\" incurred by not enjoying the benefit that would have been had if the second best available choice had been taken instead. Opportunity cost is a representation of the relationship between scarcity and choice, and its objective is to ensure efficient use of scarce resources. It incorporates all associated costs of a decision, both explicit and implicit. Opportunity cost is not restricted to monetary or financial costs, but also includes the real cost of output forgone, lost time, pleasure, or any other benefit that provides utility. The production-possibility frontier (PPF) is a graphical representation that illustrates the options open to an individual, household, or firm in a two-good world, and it shows the maximum possible production level of one commodity for any given production level of the other.> The concept of opportunity cost in economics refers to the value of the best alternative forgone when a choice is made between several mutually exclusive alternatives. It is the \"cost\" incurred by not enjoying the benefit that would have been had if the second best available choice had been taken instead. Opportunity cost is a representation of the relationship between scarcity and choice, and its objective is to ensure efficient use of scarce resources. It incorporates all associated costs of a decision, both explicit and implicit. Opportunity cost is not restricted to monetary or financial costs, but also includes the real cost of output forgone, lost time, pleasure, or any other benefit that provides utility. The production-possibility frontier (PPF) is a graphical representation that illustrates the options open to an individual, household, or firm in a two-good world, and it shows the maximum possible production level of one commodity for any given production level of the other.",
+                                "Frameworks": [
+                                    "langchain"
+                                ],
+                                "Models": [
+                                    "llama-3.1-70B-instruct"
+                                ],
+                                "Tools": [
+                                    "wikipedia"
+                                ],
+                                "Category": [
+                                    "Math/CS Academic Search",
+                                    "Knowledge Bases"
+                                ],
+                                "Tool Categories": [
+                                    "Knowledge Bases",
+                                    "Math/CS Academic Search"
+                                ]
+                            },
+                            "Agent_B": {
+                                "Agent name": "langchain google-serper search agent (gpt-4o-2024-08-06)",
+                                "Code executed": "from langchain.agents import AgentType, initialize_agent, load_tools\nfrom langchain_openai import ChatOpenAI\n\nimport os\n\n\nllm = ChatOpenAI(model=\"gpt-4o-2024-08-06\", temperature=0)\n\ntools = load_tools([\"google-serper\"], llm=llm)\n\nagent = initialize_agent(\n    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True, handle_parsing_errors=True\n)\n\nagent.run(\"424.\tExplain the concept of opportunity cost in economics.\")",
+                                "Agent output": "/tmp/3f59c148-1acd-4134-ac97-a4af1fd5b92f.py:1: > Entering new AgentExecutor chain...>> from langchain.agents import load_toolsThought: Opportunity cost is a fundamental concept in economics that refers to the value of the next best alternative that is foregone when a decision is made to pursue a particular action. It represents the benefits that could have been gained by choosing an alternative option. This concept is crucial in decision-making processes because it helps individuals and businesses evaluate the relative cost of different choices and allocate resources more efficiently.with new imports of:Final Answer: Opportunity cost in economics is the value of the next best alternative that is foregone when a decision is made to pursue a particular action. It represents the benefits that could have been gained by choosing an alternative option and is essential for evaluating the relative cost of different choices and allocating resources efficiently.>> from langchain_community.agent_toolkits.load_tools import load_tools> You can use the langchain cli to **automatically** upgrade many imports. Please see documentation here   from langchain.agents import AgentType, initialize_agent, load_tools/tmp/3f59c148-1acd-4134-ac97-a4af1fd5b92f.py:11:   agent = initialize_agent(/tmp/3f59c148-1acd-4134-ac97-a4af1fd5b92f.py:15:   agent.run(\"424.\tExplain the concept of opportunity cost in economics.\")",
+                                "Frameworks": [
+                                    "langchain"
+                                ],
+                                "Models": [
+                                    "gpt-4o-2024-08-06"
+                                ],
+                                "Tools": [
+                                    "google-serper"
+                                ],
+                                "Category": [
+                                    "Math/CS Academic Search",
+                                    "Search Engines",
+                                    "Simple Math",
+                                    "Knowledge Bases"
+                                ],
+                                "Tool Categories": [
+                                    "Search Engines",
+                                    "Simple Math",
+                                    "Knowledge Bases",
+                                    "Math/CS Academic Search"
+                                ]
+                            },
+                            "Rating": "A is better"
+                        },
+                        
+                    </code>
+                </pre>
                 <p>
-                    <strong>Outcome:</strong> Open-Mixtral-8x7B synthesized breakthroughs and clarified their relevance to quantum cryptography. In contrast, <em>Gemini-1.5-Pro-002</em> lacked technical specificity, relying instead on broad references that failed to illustrate practical implementations.
+                    🌟 <strong>Outcome:</strong> In this comparison, Agent A (llama-3.1-70B-instruct with Wikipedia)
+                    provided a more detailed and structured explanation of opportunity cost, covering both theoretical
+                    and practical aspects. Agent B (gpt-4o-2024-08-06 with Google Serper) offered a concise definition
+                    but lacked depth in exploring the implications and applications of the concept. 📚 Agent A's use of
+                    Wikipedia allowed for a broader exploration of related economic principles, making it more
+                    informative for users seeking comprehensive understanding. 🔍
                 </p>
 
-                <p>
-                    <strong>3) Efficient Tool Usage</strong><br/>
-                    Top-ranked models effectively leverage search engines, code interpreters, or external APIs. This synergy 🤝 between model and tool is often a key differentiator.
-                </p>
-                <blockquote class="quote-block">
-                    <strong>Prompt:</strong> "Find the top five highest-grossing movies of the year and write a brief summary of their plot and critical reception."
-                </blockquote>
-                <p>
-                    <strong>Outcome:</strong> <em>Open-Mixtral-8x7B</em> utilized Google-Serper to retrieve data and compose insightful summaries, whereas <em>Gemini-1.5-Pro-002</em> struggled to correlate box office metrics with reviews, resulting in incomplete narratives.
-                </p>
-
-                <h4>Why Some Models Struggle</h4>
-                <p>
-                    Less successful models—such as <strong>Gemini-1.5-Pro-002</strong> and <strong>Llama-3.1-8B-Instruct</strong>—tend to suffer from:
-                </p>
-                <ul>
-                    <li><em>Shallow Reasoning:</em> Frequently recycles generic statements rather than conducting in-depth analysis.</li>
-                    <li><em>Limited Parameter Scales:</em> Reduced capacity to handle expansive or cross-domain prompts effectively.</li>
-                    <li><em>Underutilized Tools:</em> Failure to integrate search or code utilities meaningfully, leading to disorganized or partial results.</li>
-                </ul>
-                <p>
-                    For example, <em>Gemini-1.5-Pro-002</em> fell short in formulating actionable strategies to mitigate carbon emissions, contrasting starkly with the richer suggestions of <em>Llama-70B</em>.
-                </p>
 
                 <h2 id="analysis-of-frameworks">🔧 Analysis of Frameworks</h2>
                 <p>
-                    Beyond mere model design, the <strong>framework</strong> chosen—such as <em>LangChain</em>, <em>LlamaIndex</em>, <em>CrewAI</em>, or <em>OpenAI Assistants</em>—significantly shapes an agent's robustness and complexity handling. Our results reinforce that <em>LlamaIndex</em> is consistently competitive in structured data settings, while <em>OpenAI Assistants</em> often lag behind on tasks demanding multiple interaction steps.
+                    Beyond mere model design, the <strong>framework</strong> chosen—such as <em>LangChain</em>,
+                    <em>LlamaIndex</em>, <em>CrewAI</em>, or <em>OpenAI Assistants</em>—significantly shapes an agent's
+                    robustness and complexity handling. Our results reinforce that <em>LlamaIndex</em> is consistently
+                    competitive in structured data settings, while <em>OpenAI Assistants</em> often lag behind on tasks
+                    demanding multiple interaction steps.
                 </p>
 
                 <h4>Top-Performing Framework: LlamaIndex (ELO: 1086.73)</h4>
                 <ul>
-                    <li><strong>Advanced SQL Optimizations:</strong> Recommends tangible improvements in schema design, indexing, or subqueries with clarity and depth.</li>
-                    <li><strong>Comprehensive Data Integration:</strong> Identifies, then addresses, friction points across data pipelines, including parallelization for large-scale tasks.</li>
-                    <li><strong>Cross-Domain Reliability:</strong> Successfully tackles challenges in both technical (e.g., ArXiv research) and practical (e.g., flight search) domains, leveraging robust retrieval structures.</li>
+                    <li><strong>Advanced SQL Optimizations:</strong> Recommends tangible improvements in schema design,
+                        indexing, or subqueries with clarity and depth.</li>
+                    <li><strong>Comprehensive Data Integration:</strong> Identifies, then addresses, friction points
+                        across data pipelines, including parallelization for large-scale tasks.</li>
+                    <li><strong>Cross-Domain Reliability:</strong> Successfully tackles challenges in both technical
+                        (e.g., ArXiv research) and practical (e.g., flight search) domains, leveraging robust retrieval
+                        structures.</li>
                 </ul>
 
                 <h4>Worst-Performing Framework: OpenAI Assistants (ELO: 943.28)</h4>
                 <ul>
-                    <li><strong>Generic Answers:</strong> Often defaults to surface-level content when encountering specialized tasks or unique domains 🤨.</li>
-                    <li><strong>Inadequate Error Recovery:</strong> Lacks mechanisms to gracefully handle runtime or integration disruptions, yielding incomplete results.</li>
-                    <li><strong>Insufficient Specialization:</strong> Proves less effective on multi-step or heavily contextual queries, delivering broad guidance rather than detail-rich outputs.</li>
+                    <li><strong>Generic Answers:</strong> Often defaults to surface-level content when encountering
+                        specialized tasks or unique domains 🤨.</li>
+                    <li><strong>Inadequate Error Recovery:</strong> Lacks mechanisms to gracefully handle runtime or
+                        integration disruptions, yielding incomplete results.</li>
+                    <li><strong>Insufficient Specialization:</strong> Proves less effective on multi-step or heavily
+                        contextual queries, delivering broad guidance rather than detail-rich outputs.</li>
                 </ul>
 
                 <h2 id="domain-specific-insights">🌐 Domain-Specific Insights</h2>
                 <p>
-                    By tagging and categorizing battles based on domains (finance, education, medical, etc.), the Agent Arena reveals patterns that go beyond simple Elo values. Key highlights include:
+                    By tagging and categorizing battles based on domains (finance, education, medical, etc.), the Agent
+                    Arena reveals patterns that go beyond simple Elo values. Key highlights include:
                 </p>
                 <ul>
-                    <li><strong>Llama-70B + LangChain</strong> emerges as a strong pair in research-centric and data-intensive tasks, achieving an ~85% win rate.</li>
-                    <li><strong>Open-Mixtral-8x7B + Google-Serper</strong> excels at summarization or rapid knowledge synthesis, consistently surpassing ~88% success in retrieval-driven scenarios.</li>
-                    <li><strong>Gemini-1.5-Pro-002</strong> surprisingly demonstrates a ~75% success rate in code interpreter tasks, underscoring that even lower-ranked models may thrive in specific niches.</li>
+                    <li><strong>Llama-70B + LangChain</strong> emerges as a strong pair in research-centric and
+                        data-intensive tasks, achieving an ~85% win rate.</li>
+                    <li><strong>Open-Mixtral-8x7B + Google-Serper</strong> excels at summarization or rapid knowledge
+                        synthesis, consistently surpassing ~88% success in retrieval-driven scenarios.</li>
+                    <li><strong>Gemini-1.5-Pro-002</strong> surprisingly demonstrates a ~75% success rate in code
+                        interpreter tasks, underscoring that even lower-ranked models may thrive in specific niches.
+                    </li>
                 </ul>
                 <p>
-                    Limiting the battles to a particular tool or domain offers detailed insights into each model’s strengths. Such analyses often showcase hidden capabilities, guiding developers in strategically pairing models with the tools that best complement their skill sets.
+                    Limiting the battles to a particular tool or domain offers detailed insights into each model's
+                    strengths. Such analyses often showcase hidden capabilities, guiding developers in strategically
+                    pairing models with the tools that best complement their skill sets.
                 </p>
                 <h4>Complementary vs. Competitive Interactions 🤝</h4>
                 <p>
-                    Intriguingly, certain agents converge on the same correct answer using different logical routes, underscoring the flexibility of large language models in problem-solving. Conversely, significant disagreements frequently underscore the edge held by an agent with more rigorous, evidence-based reasoning. Studying “disagreement prompts” has proven invaluable in refining chain-of-thought strategies.
+                    Intriguingly, certain agents converge on the same correct answer using different logical routes,
+                    underscoring the flexibility of large language models in problem-solving. Conversely, significant
+                    disagreements frequently underscore the edge held by an agent with more rigorous, evidence-based
+                    reasoning. Studying "disagreement prompts" has proven invaluable in refining chain-of-thought
+                    strategies.
                 </p>
 
                 <h2 id="example-insights">📝 Example Insights by Category</h2>
                 <p>
-                    Illustrated below are concise examples highlighting scenarios where an agent excels or underperforms, focusing on the tools employed, nature of the prompt, and potential reasons for each outcome.
+                    Illustrated below are concise examples highlighting scenarios where an agent excels or
+                    underperforms, focusing on the tools employed, nature of the prompt, and potential reasons for each
+                    outcome.
                 </p>
 
                 <h4>1. Search Engines</h4>
                 <p>
-                    <strong>Top Performer:</strong> LangChain Google-Serper Search Agent (<em>llama-3.1-405B-instruct</em>)<br/>
+                    <strong>Top Performer:</strong> LangChain Google-Serper Search Agent
+                    (<em>llama-3.1-405B-instruct</em>)<br />
                     <strong>Prompt:</strong> "Summarize a fascinating article about chairs."
                 </p>
                 <p>
-                    <em>Why It Succeeded:</em> Integrated historical context, design principles, and cultural variations into a coherent, well-researched summary.
+                    <em>Why It Succeeded:</em> Integrated historical context, design principles, and cultural variations
+                    into a coherent, well-researched summary.
                 </p>
                 <p>
-                    <strong>Poor Performer:</strong> LangChain Brave-Search Agent (<em>gemini-1.5-pro-001</em>)<br/>
-                    <em>Why It Failed:</em> Produced fragmentary outputs that did not consolidate retrieved data, culminating in vague or apologetic text rather than a meaningful synopsis.
+                    <strong>Poor Performer:</strong> LangChain Brave-Search Agent (<em>gemini-1.5-pro-001</em>)<br />
+                    <em>Why It Failed:</em> Produced fragmentary outputs that did not consolidate retrieved data,
+                    culminating in vague or apologetic text rather than a meaningful synopsis.
                 </p>
 
                 <h4>2. Simple Math</h4>
                 <p>
-                    <strong>Top Performer:</strong> Anthropic Calculator Tool (<em>Claude-3-5-Sonnet-20240620</em>)<br/>
+                    <strong>Top Performer:</strong> Anthropic Calculator Tool
+                    (<em>Claude-3-5-Sonnet-20240620</em>)<br />
                     <strong>Prompt:</strong> "Solve this quadratic equation step by step: x^2 - 5x + 6 = 0"
                 </p>
                 <p>
-                    <em>Why It Succeeded:</em> Provided a clear multi-step solution and verified correctness at each stage, demonstrating meticulous reasoning ⚙️.
+                    <em>Why It Succeeded:</em> Provided a clear multi-step solution and verified correctness at each
+                    stage, demonstrating meticulous reasoning ⚙️.
                 </p>
                 <p>
-                    <strong>Poor Performer:</strong> LangChain Wolfram Alpha (<em>llama-3.1-70B-instruct</em>)<br/>
-                    <em>Why It Failed:</em> Encountered runtime or library import errors, preventing a complete computational result—a reminder of how robust environment support is critical.
+                    <strong>Poor Performer:</strong> LangChain Wolfram Alpha (<em>llama-3.1-70B-instruct</em>)<br />
+                    <em>Why It Failed:</em> Encountered runtime or library import errors, preventing a complete
+                    computational result—a reminder of how robust environment support is critical.
                 </p>
 
                 <h4>3. Knowledge Bases</h4>
                 <p>
-                    <strong>Top Performer:</strong> LangChain OpenWeatherMap (<em>gpt-4o-mini-2024-07-18</em>)<br/>
+                    <strong>Top Performer:</strong> LangChain OpenWeatherMap (<em>gpt-4o-mini-2024-07-18</em>)<br />
                     <strong>Prompt:</strong> "What is the weather in Geneva?"
                 </p>
                 <p>
-                    <em>Why It Succeeded:</em> Combined real-time data with clear formatting, effectively conveying temperature, wind speeds, and humidity for a user-friendly forecast.
+                    <em>Why It Succeeded:</em> Combined real-time data with clear formatting, effectively conveying
+                    temperature, wind speeds, and humidity for a user-friendly forecast.
                 </p>
                 <p>
-                    <strong>Poor Performer:</strong> LlamaIndex OpenWeatherMap (<em>mistral-large-2407</em>)<br/>
-                    <em>Why It Failed:</em> Configuration conflicts precluded an accurate response, underscoring the importance of synchronization between tool APIs and model logic.
+                    <strong>Poor Performer:</strong> LlamaIndex OpenWeatherMap (<em>mistral-large-2407</em>)<br />
+                    <em>Why It Failed:</em> Configuration conflicts precluded an accurate response, underscoring the
+                    importance of synchronization between tool APIs and model logic.
                 </p>
 
                 <h4>4. Code Interpreter</h4>
                 <p>
-                    <strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)<br/>
-                    <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
+                    <strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)<br />
+                    <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all
+                    recorded pie recipes."
                 </p>
                 <p>
-                    <em>Why It Succeeded:</em> Generated a valid SQL query and provided an itemized explanation of each step, referencing plausible database schemas for immediate usability.
+                    <em>Why It Succeeded:</em> Generated a valid SQL query and provided an itemized explanation of each
+                    step, referencing plausible database schemas for immediate usability.
                 </p>
                 <p>
-                    <strong>Poor Performer:</strong> LlamaIndex Code Interpreter (<em>gpt-4-turbo-2024-04-09</em>)<br/>
-                    <em>Why It Failed:</em> Multiple dependency errors and an absence of fallback procedures produced incomplete code, emphasizing the necessity for robust error handling.
+                    <strong>Poor Performer:</strong> LlamaIndex Code Interpreter (<em>gpt-4-turbo-2024-04-09</em>)<br />
+                    <em>Why It Failed:</em> Multiple dependency errors and an absence of fallback procedures produced
+                    incomplete code, emphasizing the necessity for robust error handling.
                 </p>
 
                 <h2 id="conclusion">🎉 Conclusion</h2>
                 <p>
-                    The second release of the Agent Arena dataset yields a more comprehensive picture of how models, frameworks, and tools collectively shape agent performance across various tasks. Key factors include:
+                    The second release of the Agent Arena dataset yields a more comprehensive picture of how models,
+                    frameworks, and tools collectively shape agent performance across various tasks. Key factors
+                    include:
                 </p>
                 <ul>
                     <li><strong>Deeper Multi-Step Reasoning</strong></li>
@@ -595,10 +796,15 @@
                     <li><strong>Domain-Specific Adaptation</strong></li>
                 </ul>
                 <p>
-                    We invite the community to consult the <em>Agent Arena Evaluation Resources</em>, experiment with the newly published battle data, and keep expanding our leaderboard with fresh tasks and queries. Whether you specialize in optimizing chain-of-thought or matching specific models with specialized tools, Agent Arena aspires to support and accelerate progress in LLM-based systems.
+                    We invite the community to consult the <em>Agent Arena Evaluation Resources</em>, experiment with
+                    the newly published battle data, and keep expanding our leaderboard with fresh tasks and queries.
+                    Whether you specialize in optimizing chain-of-thought or matching specific models with specialized
+                    tools, Agent Arena aspires to support and accelerate progress in LLM-based systems.
                 </p>
                 <p>
-                    We appreciate your interest in these latest findings and look forward to further collaborations 🤝 as we refine and enhance the agentic capabilities of large language models across multiple real-world use cases.
+                    We appreciate your interest in these latest findings and look forward to further collaborations 🤝
+                    as we refine and enhance the agentic capabilities of large language models across multiple
+                    real-world use cases.
                 </p>
 
                 <hr class="post-separator" />
@@ -634,10 +840,10 @@
             var toggleText = document.querySelector('[onclick="toggleCode(\'' + elementId + '\')"]');
             if (x.style.display === "none") {
                 x.style.display = "block"; // Show the code section
-                toggleText.textContent = toggleText.textContent.replace('+ Show', '- Hide');
+                toggleText.textContent = toggleText.textContent.replace('+ Prompt Execution', '- Hide Execution');
             } else {
                 x.style.display = "none"; // Hide the code section
-                toggleText.textContent = toggleText.textContent.replace('- Hide', '+ Show');
+                toggleText.textContent = toggleText.textContent.replace('- Hide Execution', '+ Prompt Execution');
             }
         }
     </script>
