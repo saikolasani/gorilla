@@ -1,116 +1,437 @@
-<div class="header" style="text-align: center; padding: 20px;">
-    <h1 style="font-family: 'Arial'; font-size: 2.5rem; color: #333;">
-        🦍 Gorilla X LMSYS Chatbot Arena
-    </h1>
-    <h2 style="font-family: 'Arial'; font-size: 2rem; color: #007bff;">
-        Agent Arena
-    </h2>
-    <p style="font-size: 1rem; color: #007bff;">
-        Sai Kolasani &nbsp; | &nbsp; Nithik Yekollu &nbsp;| &nbsp; Kai Wen &nbsp;|
-        &nbsp;Anastasios Angelopoulos &nbsp; | &nbsp; Joseph Gonzalez &nbsp; | &nbsp; Ion Stoica &nbsp; | &nbsp; Shishir G. Patil
-    </p>
-</div>
+<!DOCTYPE html>
+<html>
 
-<div class="highlight-clean-blog" style="padding: 20px; background-color: #f9f9f9;">
-    <h1 class="blog-title" style="text-align: center; font-size: 2.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">
-        Introduction
-    </h1>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
-        Since its release last month, Agent Arena has received over <strong>300 new user-submitted ratings</strong>, 
-        bringing the total to an impressive <strong>2,500 pairwise comparisons</strong>. This growth has enabled us to 
-        release a new dataset of battle results, alongside an updated Elo-based rating system for evaluating agents. 
-        As part of this update, we are also sharing an interactive notebook to help users explore these ratings and 
-        gain insights into the rankings.
-    </p>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
-        You can access the new battle dataset and the Elo calculation notebook here:
-    </p>
-    <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
-        <li><a href="https://www.agent-arena.com/dataset" target="_blank" style="color: #1e90ff; text-decoration: none;">Agent Arena Evaluation Resources</a></li>
-    </ul>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
-        In this blog, we aim to go beyond raw numbers and explore why certain agents and their subcomponents dominate the rankings while others struggle. By leveraging the battle data, we delve into key insights across several dimensions:
-    </p>
-    <ul style="list-style-type: square; padding-left: 20px; font-size: 1.2rem;">
-        <li><strong>Analysis of Models:</strong> Why do models like Llama-70B and Open-Mixtral-8x7B excel at agentic tasks? What traits contribute to their success, and how do they compare to lower-performing models like Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002? We will feature examples of their chain-of-thought reasoning to illustrate these differences.</li>
-        <li><strong>Framework Comparisons:</strong> Why do frameworks such as LlamaIndex outperform competitors like LangChain or CrewAI? Specific battle examples will shed light on the unique strengths and weaknesses of these orchestration methods.</li>
-        <li><strong>Domain-Specific Insights:</strong> Are certain models or frameworks better suited for specific domains? We will analyze how the leaderboard changes when filtered by domain and explore notable trends in model and tool performance.</li>
-        <li><strong>Win Rate Analysis:</strong> We’ll examine model/tool pairing performance, including tools like search engines, financial APIs, and code interpreters, to highlight the impact of integration on overall win rates.</li>
-    </ul>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
-        We will also highlight examples where agents achieve the same correct answer using distinct reasoning styles, 
-        as well as scenarios of strong disagreement where one agent’s reasoning proves more convincing. By showcasing these 
-        cases, this blog aims to provide deeper insights into the evolving capabilities and limitations of LLM agents and their subcomponents.
-    </p>
-</div>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRZJLJCSH6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-<div class="highlight-clean-blog" style="padding: 20px; background-color: #f9f9f9;">
-    <h2 class="blog-title" style="text-align: center; font-size: 2rem; color: #333; font-family: 'Arial'; font-weight: 570;">
-        Analysis of Models
-    </h2>
-    <h3 style="font-size: 1.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">🌟 High-Performing Models</h3>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
-        Models like <strong>Llama-70B</strong> have consistently demonstrated exceptional performance in agentic tasks. Below are key examples:
-    </p>
-    <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
-        <li><strong>Prompt:</strong> "Analyze the dataset of global carbon emissions over the past decade and identify the top three contributing industries. Propose actionable strategies for reducing emissions in each industry."<br>
-        <strong>Llama-70B:</strong> Successfully identified energy, manufacturing, and transportation as top contributors, offering actionable strategies such as adopting renewable energy and optimizing supply chains. Its ability to synthesize structured insights highlights its analytical capabilities.<br>
-        <strong>Competing Model:</strong> Gemini-1.5-Pro-002<br>
-        <strong>Why It Lost:</strong> Failed to synthesize insights across data points and provided shallow, general suggestions without depth.</li>
+        gtag("config", "G-NRZJLJCSH6");
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 
-        <li><strong>Prompt:</strong> "Explain the advancements in quantum computing in the last five years, focusing on their potential applications in cryptography and artificial intelligence. Compare these advancements with existing classical computing methods."<br>
-        <strong>Llama-70B:</strong> Delivered a detailed, well-structured analysis, clearly contrasting quantum advancements with classical methods.<br>
-        <strong>Competing Model:</strong> GPT-4o-Mini-2024-07-18<br>
-        <strong>Why It Lost:</strong> Relied on generic statements without providing detailed, research-backed comparisons.</li>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <title>
+        Agent Arena: A Platform for Evaluating and Comparing LLM Agents
+    </title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="stylesheet" href="../assets/css/blog.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
 
-        <li><strong>Prompt:</strong> "Develop a weekly fitness plan tailored to a 30-year-old individual aiming for muscle gain, incorporating nutritional advice and rest strategies."<br>
-        <strong>Llama-70B:</strong> Provided a personalized, scientifically grounded plan that integrated exercise, nutrition, and recovery strategies.<br>
-        <strong>Competing Model:</strong> Claude-3-Haiku-20240307<br>
-        <strong>Why It Lost:</strong> Produced generic suggestions without supporting them with scientific reasoning or domain expertise.</li>
-    </ul>
-    <h3 style="font-size: 1.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">💡 Insights on Low-Performing Models</h3>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
-        The worst-performing model, <strong>Gemini-1.5-Pro-002</strong>, often falls short due to:
-    </p>
-    <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
-        <li><strong>Task-Specific Weaknesses:</strong> Struggles with multi-step reasoning and problem-solving tasks.</li>
-        <li><strong>Limited Knowledge Integration:</strong> Fails to generalize insights across domains.</li>
-        <li><strong>Small Parameter Scale:</strong> Lacks the capacity to handle complex or ambiguous instructions effectively.</li>
-    </ul>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
-        For instance, in a task requiring historical weather data comparison, Gemini provided incomplete insights, failing to contextualize the information meaningfully.
-    </p>
-</div>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        body {
+            font-family: "Source Sans Pro", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            justify-content: center;
+            align-items: center;
+        }
 
-<div class="highlight-clean-blog" style="padding: 20px; background-color: #f9f9f9;">
-    <h2 class="blog-title" style="text-align: center; font-size: 2rem; color: #333; font-family: 'Arial'; font-weight: 570;">
-        Analysis of Frameworks
-    </h2>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
-        Frameworks play a crucial role in agent performance. Here are insights into the top and bottom-performing frameworks:
-    </p>
-    <h3 style="font-size: 1.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">🚀 Top-Performing Framework: LlamaIndex</h3>
-    <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
-        <li><strong>Prompt:</strong> "Analyze the use of attention mechanisms in transformer models and summarize the key contributions from recent papers."<br>
-        <strong>LlamaIndex:</strong> Synthesized insights from multiple research papers, highlighting advancements such as multi-head attention and sparse attention techniques.<br>
-        <strong>Competing Framework:</strong> LangChain<br>
-        <strong>Why It Lost:</strong> Focused on a single paper, failing to provide a comprehensive overview of recent advancements.</li>
+        .highlight-clean-blog {
+            color: #313437;
+            background-color: #fff;
+            padding: 50px 0;
+        }
 
-        <li><strong>Prompt:</strong> "Find cheap flights from Gdansk to Vienna."<br>
-        <strong>LlamaIndex:</strong> Provided accurate, real-time results and dynamically adjusted search parameters based on user input.<br>
-        <strong>Competing Framework:</strong> LangChain<br>
-        <strong>Why It Lost:</strong> Returned outdated or incomplete results, highlighting integration challenges.</li>
-    </ul>
-    <h3 style="font-size: 1.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">⚠️ Low-Performing Framework: OpenAI Assistants</h3>
-    <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
-        <li><strong>Prompt:</strong> "This is not financial advice: Predict potential growth for TSLA stock over the next decade."<br>
-        <strong>OpenAI Assistant:</strong> Provided generic statements about market trends without integrating key factors like EV market growth.<br>
-        <strong>Competing Framework:</strong> LangChain<br>
-        <strong>Why It Won:</strong> Delivered structured analysis leveraging real-time data and hypothetical growth scenarios.</li>
+        .blog-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-        <li><strong>Prompt:</strong> "Summarize the main points of a PDF document."<br>
-        <strong>OpenAI Assistant:</strong> Produced a generic summary without identifying key figures or their significance.<br>
-        <strong>Competing Framework:</strong> Anthropic PDF Agent<br>
-        <strong>Why It Won:</strong> Highlighted key figures and provided detailed explanations of their importance.</li>
-    </ul>
-</div>
+        .blog-post {
+            margin: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            justify-content: center;
+        }
+
+        .blog-post img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .blog-title {
+            color: #055ada;
+            text-align: center;
+        }
+
+        .author-date {
+            display: flex;
+            margin-bottom: 0px;
+            justify-content: center;
+        }
+
+        .author {
+            font-size: 16px;
+            color: #1e90ff;
+            margin-right: 20px;
+        }
+
+        .date {
+            font-size: 16px;
+            color: #7e8790;
+        }
+
+        .preview {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .box-index {
+            position: fixed;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 150px;
+        }
+
+        .box-index h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .box-index ul {
+            list-style-type: disc;
+            padding: 0;
+        }
+
+        .box-index ul li {
+            margin-bottom: 10px;
+        }
+
+        .box-index ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .box-index ul li a:hover {
+            color: #1e90ff;
+        }
+
+        .more-blogs .sub-menu {
+            display: none;
+        }
+
+        .more-blogs .sub-menu.expanded {
+            display: block;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .more-blogs .caret {
+            transition: transform 0.3s ease-in-out;
+            display: inline-block;
+            transform: rotate(0deg);
+            font-size: 12px;
+        }
+
+        .more-blogs.expanded .caret {
+            transform: rotate(90deg);
+        }
+
+        
+
+        @media screen and (max-width: 1000px) {
+            .blog-post {
+                padding: 10px;
+                /* Adjust spacing for smaller screens */
+                max-width: 90%
+            }
+
+            .blog-post img {
+                max-width: 90%;
+            }
+
+            .box-index {
+                display: none;
+                /* Hide the index on smaller screens */
+            }
+            
+        }
+        
+
+    .citation-container {
+        font-family: Arial, sans-serif;
+    }
+    .citation-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .citation-intro {
+        color: #444;
+        margin-bottom: 20px;
+    }
+    .citation-block {
+        white-space: pre-wrap;
+        width: 100%;
+        overflow-x: auto;
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-family: Courier, monospace;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .author-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .author {
+        white-space: nowrap;
+        color: #1e90ff;
+        text-decoration: none;
+    }
+
+    .code-toggle {
+        font-weight: bold;
+        color: #0056b3;
+        cursor: pointer;
+        margin: 20px 0;
+    }
+
+    .code-toggle:hover {
+        text-decoration: underline;
+    }
+
+    .quote-block {
+        border-left: 4px solid #d3d3d3;  /* Light gray left border */
+        padding-left: 16px;              /* Indent the text */
+        margin: 12px 0;                  /* Add some spacing above and below */
+        font-style: italic;              /* Italicize the text */
+        background-color: #f7f7f7;       /* Light background color */
+        color: #333;                     /* Slightly dark text color */
+        border-radius: 4px;              /* Optional: rounded corners */
+        padding-top: 8px;                /* Optional: top padding */
+        padding-bottom: 8px;             /* Optional: bottom padding */
+    }
+
+
+    #ranking-methodology {
+        font-family: "Source Sans Pro", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    #ranking-methodology h3, 
+    #ranking-methodology h4, 
+    #ranking-methodology h5 {
+        color: #2c3e50;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #ranking-methodology p {
+        margin-bottom: 1em;
+    }
+
+    #ranking-methodology ul {
+        padding-left: 20px;
+        margin-bottom: 1em;
+    }
+
+    #ranking-methodology .equation-block {
+        background-color: #f8f8f8;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 20px auto;
+        max-width: 80%;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow-x: auto;
+    }
+
+    #ranking-methodology .equation-block pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    @media (max-width: 768px) {
+        #ranking-methodology .equation-block {
+            max-width: 95%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .equation-block {
+            max-width: 95%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar" style="
+        position: absolute;
+        top: 0;
+        right: 20px;
+        padding: 10px;
+        z-index: 100;
+        font-size: 18px;
+      ">
+        <a href="https://www.agent-arena.com/">Arena</a>
+        <a href="https://www.agent-arena.com/users">Prompt Hub</a>
+        <a href="https://www.agent-arena.com/leaderboard">Leaderboard</a>
+    </div>
+
+    <div class="header" style="text-align: center; padding: 20px;">
+        <h1 style="font-family: 'Arial'; font-size: 2.5rem; color: #333;">
+            🦍 Gorilla X LMSYS Chatbot Arena
+        </h1>
+        <h2 style="font-family: 'Arial'; font-size: 2rem; color: #007bff;">
+            Agent Arena
+        </h2>
+        <p style="font-size: 1rem; color: #007bff;">
+            Sai Kolasani &nbsp; | &nbsp; Nithik Yekollu &nbsp;| &nbsp; Kai Wen &nbsp;|
+            &nbsp;Anastasios Angelopoulos &nbsp; | &nbsp; Joseph Gonzalez &nbsp; | &nbsp; Ion Stoica &nbsp; | &nbsp; Shishir G. Patil
+        </p>
+    </div>
+
+    <div class="highlight-clean-blog" style="padding: 20px; background-color: #f9f9f9;">
+        <h1 class="blog-title" style="text-align: center; font-size: 2.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">
+            Introduction
+        </h1>
+        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
+            Since its release last month, Agent Arena has received over <strong>300 new user-submitted ratings</strong>, 
+            bringing the total to an impressive <strong>2,500 pairwise comparisons</strong>. This growth has enabled us to 
+            release a new dataset of battle results, alongside an updated Elo-based rating system for evaluating agents. 
+            As part of this update, we are also sharing an interactive notebook to help users explore these ratings and 
+            gain insights into the rankings.
+        </p>
+        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
+            You can access the new battle dataset and the Elo calculation notebook here:
+        </p>
+        <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
+            <li><a href="https://www.agent-arena.com/dataset" target="_blank" style="color: #1e90ff; text-decoration: none;">Agent Arena Evaluation Resources</a></li>
+        </ul>
+        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
+            In this blog, we aim to go beyond raw numbers and explore why certain agents and their subcomponents dominate the rankings while others struggle. By leveraging the battle data, we delve into key insights across several dimensions:
+        </p>
+        <ul style="list-style-type: square; padding-left: 20px; font-size: 1.2rem;">
+            <li><strong>Analysis of Models:</strong> Why do models like Llama-70B and Open-Mixtral-8x7B excel at agentic tasks? What traits contribute to their success, and how do they compare to lower-performing models like Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002? We will feature examples of their chain-of-thought reasoning to illustrate these differences.</li>
+            <li><strong>Framework Comparisons:</strong> Why do frameworks such as LlamaIndex outperform competitors like LangChain or CrewAI? Specific battle examples will shed light on the unique strengths and weaknesses of these orchestration methods.</li>
+            <li><strong>Domain-Specific Insights:</strong> Are certain models or frameworks better suited for specific domains? We will analyze how the leaderboard changes when filtered by domain and explore notable trends in model and tool performance.</li>
+            <li><strong>Win Rate Analysis:</strong> We’ll examine model/tool pairing performance, including tools like search engines, financial APIs, and code interpreters, to highlight the impact of integration on overall win rates.</li>
+        </ul>
+        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
+            We will also highlight examples where agents achieve the same correct answer using distinct reasoning styles, 
+            as well as scenarios of strong disagreement where one agent’s reasoning proves more convincing. By showcasing these 
+            cases, this blog aims to provide deeper insights into the evolving capabilities and limitations of LLM agents and their subcomponents.
+        </p>
+    </div>
+
+    <div class="highlight-clean-blog" style="padding: 20px; background-color: #f9f9f9;">
+        <h2 class="blog-title" style="text-align: center; font-size: 2rem; color: #333; font-family: 'Arial'; font-weight: 570;">
+            Analysis of Models
+        </h2>
+        <h3 style="font-size: 1.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">🌟 High-Performing Models</h3>
+        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
+            Models like <strong>Llama-70B</strong> have consistently demonstrated exceptional performance in agentic tasks. Below are key examples:
+        </p>
+        <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
+            <li><strong>Prompt:</strong> "Analyze the dataset of global carbon emissions over the past decade and identify the top three contributing industries. Propose actionable strategies for reducing emissions in each industry."<br>
+            <strong>Llama-70B:</strong> Successfully identified energy, manufacturing, and transportation as top contributors, offering actionable strategies such as adopting renewable energy and optimizing supply chains. Its ability to synthesize structured insights highlights its analytical capabilities.<br>
+            <strong>Competing Model:</strong> Gemini-1.5-Pro-002<br>
+            <strong>Why It Lost:</strong> Failed to synthesize insights across data points and provided shallow, general suggestions without depth.</li>
+
+            <li><strong>Prompt:</strong> "Explain the advancements in quantum computing in the last five years, focusing on their potential applications in cryptography and artificial intelligence. Compare these advancements with existing classical computing methods."<br>
+            <strong>Llama-70B:</strong> Delivered a detailed, well-structured analysis, clearly contrasting quantum advancements with classical methods.<br>
+            <strong>Competing Model:</strong> GPT-4o-Mini-2024-07-18<br>
+            <strong>Why It Lost:</strong> Relied on generic statements without providing detailed, research-backed comparisons.</li>
+
+            <li><strong>Prompt:</strong> "Develop a weekly fitness plan tailored to a 30-year-old individual aiming for muscle gain, incorporating nutritional advice and rest strategies."<br>
+            <strong>Llama-70B:</strong> Provided a personalized, scientifically grounded plan that integrated exercise, nutrition, and recovery strategies.<br>
+            <strong>Competing Model:</strong> Claude-3-Haiku-20240307<br>
+            <strong>Why It Lost:</strong> Produced generic suggestions without supporting them with scientific reasoning or domain expertise.</li>
+        </ul>
+        <h3 style="font-size: 1.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">💡 Insights on Low-Performing Models</h3>
+        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
+            The worst-performing model, <strong>Gemini-1.5-Pro-002</strong>, often falls short due to:
+        </p>
+        <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
+            <li><strong>Task-Specific Weaknesses:</strong> Struggles with multi-step reasoning and problem-solving tasks.</li>
+            <li><strong>Limited Knowledge Integration:</strong> Fails to generalize insights across domains.</li>
+            <li><strong>Small Parameter Scale:</strong> Lacks the capacity to handle complex or ambiguous instructions effectively.</li>
+        </ul>
+        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
+            For instance, in a task requiring historical weather data comparison, Gemini provided incomplete insights, failing to contextualize the information meaningfully.
+        </p>
+    </div>
+
+    <div class="highlight-clean-blog" style="padding: 20px; background-color: #f9f9f9;">
+        <h2 class="blog-title" style="text-align: center; font-size: 2rem; color: #333; font-family: 'Arial'; font-weight: 570;">
+            Analysis of Frameworks
+        </h2>
+        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify;">
+            Frameworks play a crucial role in agent performance. Here are insights into the top and bottom-performing frameworks:
+        </p>
+        <h3 style="font-size: 1.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">🚀 Top-Performing Framework: LlamaIndex</h3>
+        <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
+            <li><strong>Prompt:</strong> "Analyze the use of attention mechanisms in transformer models and summarize the key contributions from recent papers."<br>
+            <strong>LlamaIndex:</strong> Synthesized insights from multiple research papers, highlighting advancements such as multi-head attention and sparse attention techniques.<br>
+            <strong>Competing Framework:</strong> LangChain<br>
+            <strong>Why It Lost:</strong> Focused on a single paper, failing to provide a comprehensive overview of recent advancements.</li>
+
+            <li><strong>Prompt:</strong> "Find cheap flights from Gdansk to Vienna."<br>
+            <strong>LlamaIndex:</strong> Provided accurate, real-time results and dynamically adjusted search parameters based on user input.<br>
+            <strong>Competing Framework:</strong> LangChain<br>
+            <strong>Why It Lost:</strong> Returned outdated or incomplete results, highlighting integration challenges.</li>
+        </ul>
+        <h3 style="font-size: 1.5rem; color: #007bff; font-family: 'Arial'; font-weight: 570;">⚠️ Low-Performing Framework: OpenAI Assistants</h3>
+        <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.2rem;">
+            <li><strong>Prompt:</strong> "This is not financial advice: Predict potential growth for TSLA stock over the next decade."<br>
+            <strong>OpenAI Assistant:</strong> Provided generic statements about market trends without integrating key factors like EV market growth.<br>
+            <strong>Competing Framework:</strong> LangChain<br>
+            <strong>Why It Won:</strong> Delivered structured analysis leveraging real-time data and hypothetical growth scenarios.</li>
+
+            <li><strong>Prompt:</strong> "Summarize the main points of a PDF document."<br>
+            <strong>OpenAI Assistant:</strong> Produced a generic summary without identifying key figures or their significance.<br>
+            <strong>Competing Framework:</strong> Anthropic PDF Agent<br>
+            <strong>Why It Won:</strong> Highlighted key figures and provided detailed explanations of their importance.</li>
+        </ul>
+    </div>
+</body>
