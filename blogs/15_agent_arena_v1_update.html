@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRZJLJCSH6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-NRZJLJCSH6");
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <title>
+        Agent Arena V2: Updated Dataset Release
+    </title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="stylesheet" href="../assets/css/blog.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        body {
+            font-family: "Source Sans Pro", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .highlight-clean-blog {
+            color: #313437;
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .blog-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-post {
+            margin: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            justify-content: center;
+        }
+
+        .blog-post img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .blog-title {
+            color: #055ada;
+            text-align: center;
+        }
+
+        .author-date {
+            display: flex;
+            margin-bottom: 0px;
+            justify-content: center;
+        }
+
+        .author {
+            font-size: 16px;
+            color: #1e90ff;
+            margin-right: 20px;
+        }
+
+        .date {
+            font-size: 16px;
+            color: #7e8790;
+        }
+
+        .preview {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .box-index {
+            position: fixed;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 150px;
+        }
+
+        .box-index h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .box-index ul {
+            list-style-type: disc;
+            padding: 0;
+        }
+
+        .box-index ul li {
+            margin-bottom: 10px;
+        }
+
+        .box-index ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .box-index ul li a:hover {
+            color: #1e90ff;
+        }
+
+        .more-blogs .sub-menu {
+            display: none;
+        }
+
+        .more-blogs .sub-menu.expanded {
+            display: block;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .more-blogs .caret {
+            transition: transform 0.3s ease-in-out;
+            display: inline-block;
+            transform: rotate(0deg);
+            font-size: 12px;
+        }
+
+        .more-blogs.expanded .caret {
+            transform: rotate(90deg);
+        }
+
+        @media screen and (max-width: 1000px) {
+            .blog-post {
+                padding: 10px;
+                max-width: 90%;
+            }
+
+            .blog-post img {
+                max-width: 90%;
+            }
+
+            .box-index {
+                display: none;
+            }
+        }
+
+        .citation-container {
+            font-family: Arial, sans-serif;
+        }
+        .citation-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .citation-intro {
+            color: #444;
+            margin-bottom: 20px;
+        }
+        .citation-block {
+            white-space: pre-wrap;
+            width: 100%;
+            overflow-x: auto;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: Courier, monospace;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .author-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .author {
+            white-space: nowrap;
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .code-toggle {
+            font-weight: bold;
+            color: #0056b3;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .code-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .quote-block {
+            border-left: 4px solid #d3d3d3;  
+            padding-left: 16px;
+            margin: 12px 0;
+            font-style: italic;
+            background-color: #f7f7f7; 
+            color: #333; 
+            border-radius: 4px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        #ranking-methodology {
+            font-family: "Source Sans Pro", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        #ranking-methodology h3, 
+        #ranking-methodology h4, 
+        #ranking-methodology h5 {
+            color: #2c3e50;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        #ranking-methodology p {
+            margin-bottom: 1em;
+        }
+        #ranking-methodology ul {
+            padding-left: 20px;
+            margin-bottom: 1em;
+        }
+        #ranking-methodology .equation-block {
+            background-color: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 80%;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        #ranking-methodology .equation-block pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+        @media (max-width: 768px) {
+            #ranking-methodology .equation-block {
+                max-width: 95%;
+            }
+        }
+        @media (max-width: 768px) {
+            .equation-block {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar" style="
+        position: absolute;
+        top: 0;
+        right: 20px;
+        padding: 10px;
+        z-index: 100;
+        font-size: 18px;
+      ">
+        <a href="https://www.agent-arena.com/">Arena</a>
+        <a href="https://www.agent-arena.com/users">Prompt Hub</a>
+        <a href="https://www.agent-arena.com/leaderboard">Leaderboard</a>
+    </div>
+
+    <div class="highlight-clean-blog" style="padding-bottom: 10px">
+        <h1 class="text-center" style="padding-bottom: 10px;">
+            🤖 Agent Arena: V2 Dataset Release
+        </h1>
+        <div class="box-index">
+            <h3>Agent Arena</h3>
+            <ul>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#elo-updates">💯 ELO-Based Rating Updates</a></li>
+                    <li><a href="#analysis-of-models">🔎 Analysis of Models</a></li>
+                    <li><a href="#analysis-of-frameworks">🔧 Analysis of Frameworks</a></li>
+                    <li><a href="#domain-specific-insights">🌐 Domain-Specific Insights</a></li>
+                    <li><a href="#example-insights">📝 Example Insights by Category</a></li>
+                    <li><a href="#conclusion">🎉 Conclusion</a></li>
+                    <li class="more-blogs">
+                        <a href="javascript:void(0);" onclick="toggleMoreBlogs()">More Blogs <span
+                                class="caret">&#9654;</span></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="7_open_functions_v2.html">Gorilla OpenFunctions-v2</a>
+                            </li>
+                            <li>
+                                <a href="6_api_zoo.html">The API Zoo: A Keystone for Building API-connected LLMs</a>
+                            </li>
+                            <li>
+                                <a href="5_how_to_gorilla.html">How to Use Gorilla: A Step-by-Step Walkthrough</a>
+                            </li>
+                            <li>
+                                <a href="4_open_functions.html">Gorilla OpenFunctions</a>
+                            </li>
+                            <!-- Add more blog entries as needed -->
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="blog-container">
+            <div class="blog-post">
+                <h1 class="blog-title"
+                    style="font-size: 2.2em; text-align: center; font-family: 'Arial'; font-weight:570; color: #007bff;">
+                    <a href="https://www.agent-arena.com" style="text-decoration: none; color: inherit;">
+                        Agent Arena: V2 Dataset Release
+                    </a>
+                </h1>
+
+                <div class="col-md-12">
+                    <h4 class="text-center" style="margin: 0px;">
+                        <p></p>
+                        <!-- Authors can be modified accordingly -->
+                        <a class="author" href="https://www.linkedin.com/in/nithik-yekollu-7298671a8/">Nithik Yekollu</a>
+                        <a class="author" href="https://www.linkedin.com/in/arthbohra/">Arth Bohra</a>
+                        <a class="author" href="https://www.linkedin.com/in/ashwin-chirumamilla-91103b1b5/">Ashwin Chirumamilla</a>
+                        <a class="author" href="https://www.linkedin.com/in/kaiwen129/">Kai Wen</a>
+                        <a class="author" href="https://www.linkedin.com/in/saikolasani/">Sai Kolasani</a>
+                        <a class="author" href="https://infwinston.github.io/">Wei-Lin Chiang</a>
+                        <a class="author" href="https://people.eecs.berkeley.edu/~angelopoulos//">Anastasios Angelopoulos</a>
+                        <a class="author" href="https://people.eecs.berkeley.edu/~jegonzal/">Joseph Gonzalez</a>
+                        <a class="author" href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a>
+                        <a class="author" href="https://people.eecs.berkeley.edu/~shishirpatil/">Shishir G. Patil</a>
+                        <p></p>
+                    </h4>
+                </div>
+
+                <div class="preview">
+                    <h2 id="introduction">Introduction</h2>
+                    <p>
+                        Since its release last month, the Agent Arena has gathered over <strong>500 new user-submitted ratings</strong>, bringing our total to an impressive <strong>2,671 pairwise comparisons</strong>. This expansion is particularly noteworthy 🎉 as it permits the publication of a <strong>new dataset of battle results</strong> in tandem with an updated Elo-based rating system for evaluating agents.
+                    </p>
+                    <p style="margin-left: 40px;">
+                        As part of this update, we are also sharing an interactive notebook to aid users in exploring these ratings and uncover deeper insights into our evolving rankings. You may access the new battle dataset and the Elo calculation notebook here:
+                        <br>
+                        <strong><em>
+                            Agent Arena Evaluation Resources:
+                            <br>
+                            <a href="https://github.com/ShishirPatil/gorilla/tree/main/agent-arena/evalutation" target="_blank">
+                                https://github.com/ShishirPatil/gorilla/tree/main/agent-arena/evalutation
+                            </a>
+                        </em></strong>
+                    </p>
+                    <p>
+                        In this blog, we aim to <strong>look beyond raw metrics</strong> and address the question of why certain agents and their subcomponents continue to outperform others. By leveraging our newly updated battle data, we delve into critical insights across several dimensions:
+                    </p>
+                    <ul>
+                        <li><strong>Analysis of Models:</strong> Why do models such as Llama-70B and Open-Mixtral-8x7B excel at agentic tasks? How do they contrast with lower-performing models like Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002?</li>
+                        <li><strong>Framework Comparisons:</strong> What sets frameworks such as LlamaIndex apart from LangChain or CrewAI? We highlight direct battles to illustrate specific advantages and weaknesses.</li>
+                        <li><strong>Domain-Specific Insights:</strong> Which models or frameworks excel in specialized contexts (e.g., finance, code, or research)? We analyze how the leaderboard evolves when filtered by domain, identifying salient performance patterns.</li>
+                        <li><strong>Win Rate Analysis:</strong> We detail the influence of model-tool pairings—code interpreters, search engines, and more—and explain why the correct synergy 🔑 can lead to substantially higher win rates.</li>
+                    </ul>
+                    <p>
+                        We further showcase instances in which two agents converge on the same correct solution but via distinct reasoning styles 🤔, as well as cases of pronounced disagreement that underscore the significance of deep reasoning. Let us now proceed with a thorough examination of the new data and the key insights it reveals.
+                    </p>
+                </div>
+
+                <h2 id="elo-updates">💯 ELO-Based Rating Updates</h2>
+                <p>
+                    With over 2,500 user-submitted battles, we have refined our Elo-based rating methodology to evaluate not only agents as holistic entities but also subcomponents—including models, frameworks, and tools. This granular approach offers a clearer understanding of which factors drive success or impede performance.
+                </p>
+                <p>
+                    Below is a concise summary of the top- and bottom-rated subcomponents identified in our updated leaderboard:
+                </p>
+                <ul>
+                    <li><strong>Top-Rated Tool:</strong> riza-code-interpreter (ELO: 1228.03)</li>
+                    <ul>
+                        <li><em>Example from Dataset:</em> Highly effective in tasks requiring structured computation or code-driven data analysis, thanks to deterministic outputs.</li>
+                        <li><em>Why It Shines:</em> Code interpreters generally excel at well-defined tasks where step-by-step calculations minimize ambiguity and user guesswork 📐.</li>
+                    </ul>
+                    <li><strong>Low-Rated Tool:</strong> google-lens (ELO: 798.16)</li>
+                    <ul>
+                        <li><em>Example from Dataset:</em> Encountered recurring issues in complex or multi-step prompts mixing image and textual analysis.</li>
+                        <li><em>Why It Struggles:</em> A narrower focus on image recognition limits adaptability when tasks require extensive textual reasoning or advanced context.</li>
+                    </ul>
+                    <li><strong>Top-Rated Model:</strong> llama-3.1-70B-instruct (ELO: 1045.42)</li>
+                    <ul>
+                        <li><em>Example from Dataset:</em> Repeatedly showcases robust reasoning and contextual awareness, from summarizing research papers to advanced code usage.</li>
+                        <li><em>Why It Excels:</em> Larger-parameter models typically handle complex instructions with higher accuracy and deeper cross-domain awareness.</li>
+                    </ul>
+                    <li><strong>Low-Rated Model:</strong> gemini-1.5-pro-002 (ELO: 950.74)</li>
+                    <ul>
+                        <li><em>Example from Dataset:</em> Often fails on tasks needing multi-step logic or specialized knowledge, reverting to shallow or repetitive content.</li>
+                        <li><em>Why It Struggles:</em> Smaller parameter sizes or less domain-oriented training can reduce its ability to perform in-depth analyses or combine multiple data sources.</li>
+                    </ul>
+                    <li><strong>Top-Rated Framework:</strong> llamaindex (ELO: 1086.73)</li>
+                    <ul>
+                        <li><em>Example from Dataset:</em> Adept with SQL queries and multi-source retrieval, consistently outperforming generalized frameworks in tasks demanding precision.</li>
+                        <li><em>Why It Leads:</em> LlamaIndex emphasizes structured indexing and retrieval, a methodology that translates to refined solutions for demanding enterprise or research environments.</li>
+                    </ul>
+                    <li><strong>Low-Rated Framework:</strong> openai assistants (ELO: 943.28)</li>
+                    <ul>
+                        <li><em>Example from Dataset:</em> Frequently produced broad or generic statements when confronted with multilayered tasks or code-based queries.</li>
+                        <li><em>Why It Lags:</em> Lacking advanced functionality or fallback strategies, openai assistants often fail to execute the complex reasoning users require.</li>
+                    </ul>
+                </ul>
+
+                <h2 id="analysis-of-models">🔎 Analysis of Models</h2>
+                <p>
+                    Our most recent battle data highlights the strengths of <strong>Llama-70B</strong> and <strong>Open-Mixtral-8x7B</strong>, as well as the persistent shortcomings of <strong>Llama-3.1-8B-Instruct</strong> and <strong>Gemini-1.5-Pro-002</strong>. Domain adaptation, multi-step logic, and robust tool usage are key variables influencing these outcomes, as demonstrated by the examples that follow.
+                </p>
+
+                <h4>Why Some Models Excel</h4>
+                <p>
+                    <strong>1) Multi-Step Reasoning & Contextual Depth</strong><br/>
+                    Models like <em>Llama-70B</em> exhibit notable aptitude in resolving layered prompts that demand reasoning across multiple data points, culminating in a logically structured answer.
+                </p>
+                <blockquote class="quote-block">
+                    <strong>Prompt:</strong> "Analyze the dataset of global carbon emissions over the past decade and identify the top three contributing industries. Propose actionable strategies for reducing emissions in each industry."
+                </blockquote>
+                <p>
+                    <strong>Outcome:</strong> <em>Llama-70B</em> systematically prioritized the industries and recommended feasible interventions such as renewable energy and improved logistics. <em>Gemini-1.5-Pro-002</em> offered surface-level overviews that failed to suggest domain-specific, solution-oriented plans.
+                </p>
+
+                <p>
+                    <strong>2) Domain-Specific Optimization</strong><br/>
+                    <em>Open-Mixtral-8x7B</em> consistently performs better on tasks that rely on specialized knowledge retrieval or scientific rigor.
+                </p>
+                <blockquote class="quote-block">
+                    <strong>Prompt:</strong> "Explain the advancements in quantum computing in the last five years, focusing on their potential applications in cryptography and artificial intelligence."
+                </blockquote>
+                <p>
+                    <strong>Outcome:</strong> Open-Mixtral-8x7B synthesized breakthroughs and clarified their relevance to quantum cryptography. In contrast, <em>Gemini-1.5-Pro-002</em> lacked technical specificity, relying instead on broad references that failed to illustrate practical implementations.
+                </p>
+
+                <p>
+                    <strong>3) Efficient Tool Usage</strong><br/>
+                    Top-ranked models effectively leverage search engines, code interpreters, or external APIs. This synergy 🤝 between model and tool is often a key differentiator.
+                </p>
+                <blockquote class="quote-block">
+                    <strong>Prompt:</strong> "Find the top five highest-grossing movies of the year and write a brief summary of their plot and critical reception."
+                </blockquote>
+                <p>
+                    <strong>Outcome:</strong> <em>Open-Mixtral-8x7B</em> utilized Google-Serper to retrieve data and compose insightful summaries, whereas <em>Gemini-1.5-Pro-002</em> struggled to correlate box office metrics with reviews, resulting in incomplete narratives.
+                </p>
+
+                <h4>Why Some Models Struggle</h4>
+                <p>
+                    Less successful models—such as <strong>Gemini-1.5-Pro-002</strong> and <strong>Llama-3.1-8B-Instruct</strong>—tend to suffer from:
+                </p>
+                <ul>
+                    <li><em>Shallow Reasoning:</em> Frequently recycles generic statements rather than conducting in-depth analysis.</li>
+                    <li><em>Limited Parameter Scales:</em> Reduced capacity to handle expansive or cross-domain prompts effectively.</li>
+                    <li><em>Underutilized Tools:</em> Failure to integrate search or code utilities meaningfully, leading to disorganized or partial results.</li>
+                </ul>
+                <p>
+                    For example, <em>Gemini-1.5-Pro-002</em> fell short in formulating actionable strategies to mitigate carbon emissions, contrasting starkly with the richer suggestions of <em>Llama-70B</em>.
+                </p>
+
+                <h2 id="analysis-of-frameworks">🔧 Analysis of Frameworks</h2>
+                <p>
+                    Beyond mere model design, the <strong>framework</strong> chosen—such as <em>LangChain</em>, <em>LlamaIndex</em>, <em>CrewAI</em>, or <em>OpenAI Assistants</em>—significantly shapes an agent's robustness and complexity handling. Our results reinforce that <em>LlamaIndex</em> is consistently competitive in structured data settings, while <em>OpenAI Assistants</em> often lag behind on tasks demanding multiple interaction steps.
+                </p>
+
+                <h4>Top-Performing Framework: LlamaIndex (ELO: 1086.73)</h4>
+                <ul>
+                    <li><strong>Advanced SQL Optimizations:</strong> Recommends tangible improvements in schema design, indexing, or subqueries with clarity and depth.</li>
+                    <li><strong>Comprehensive Data Integration:</strong> Identifies, then addresses, friction points across data pipelines, including parallelization for large-scale tasks.</li>
+                    <li><strong>Cross-Domain Reliability:</strong> Successfully tackles challenges in both technical (e.g., ArXiv research) and practical (e.g., flight search) domains, leveraging robust retrieval structures.</li>
+                </ul>
+
+                <h4>Worst-Performing Framework: OpenAI Assistants (ELO: 943.28)</h4>
+                <ul>
+                    <li><strong>Generic Answers:</strong> Often defaults to surface-level content when encountering specialized tasks or unique domains 🤨.</li>
+                    <li><strong>Inadequate Error Recovery:</strong> Lacks mechanisms to gracefully handle runtime or integration disruptions, yielding incomplete results.</li>
+                    <li><strong>Insufficient Specialization:</strong> Proves less effective on multi-step or heavily contextual queries, delivering broad guidance rather than detail-rich outputs.</li>
+                </ul>
+
+                <h2 id="domain-specific-insights">🌐 Domain-Specific Insights</h2>
+                <p>
+                    By tagging and categorizing battles based on domains (finance, education, medical, etc.), the Agent Arena reveals patterns that go beyond simple Elo values. Key highlights include:
+                </p>
+                <ul>
+                    <li><strong>Llama-70B + LangChain</strong> emerges as a strong pair in research-centric and data-intensive tasks, achieving an ~85% win rate.</li>
+                    <li><strong>Open-Mixtral-8x7B + Google-Serper</strong> excels at summarization or rapid knowledge synthesis, consistently surpassing ~88% success in retrieval-driven scenarios.</li>
+                    <li><strong>Gemini-1.5-Pro-002</strong> surprisingly demonstrates a ~75% success rate in code interpreter tasks, underscoring that even lower-ranked models may thrive in specific niches.</li>
+                </ul>
+                <p>
+                    Limiting the battles to a particular tool or domain offers detailed insights into each model’s strengths. Such analyses often showcase hidden capabilities, guiding developers in strategically pairing models with the tools that best complement their skill sets.
+                </p>
+                <h4>Complementary vs. Competitive Interactions 🤝</h4>
+                <p>
+                    Intriguingly, certain agents converge on the same correct answer using different logical routes, underscoring the flexibility of large language models in problem-solving. Conversely, significant disagreements frequently underscore the edge held by an agent with more rigorous, evidence-based reasoning. Studying “disagreement prompts” has proven invaluable in refining chain-of-thought strategies.
+                </p>
+
+                <h2 id="example-insights">📝 Example Insights by Category</h2>
+                <p>
+                    Illustrated below are concise examples highlighting scenarios where an agent excels or underperforms, focusing on the tools employed, nature of the prompt, and potential reasons for each outcome.
+                </p>
+
+                <h4>1. Search Engines</h4>
+                <p>
+                    <strong>Top Performer:</strong> LangChain Google-Serper Search Agent (<em>llama-3.1-405B-instruct</em>)<br/>
+                    <strong>Prompt:</strong> "Summarize a fascinating article about chairs."
+                </p>
+                <p>
+                    <em>Why It Succeeded:</em> Integrated historical context, design principles, and cultural variations into a coherent, well-researched summary.
+                </p>
+                <p>
+                    <strong>Poor Performer:</strong> LangChain Brave-Search Agent (<em>gemini-1.5-pro-001</em>)<br/>
+                    <em>Why It Failed:</em> Produced fragmentary outputs that did not consolidate retrieved data, culminating in vague or apologetic text rather than a meaningful synopsis.
+                </p>
+
+                <h4>2. Simple Math</h4>
+                <p>
+                    <strong>Top Performer:</strong> Anthropic Calculator Tool (<em>Claude-3-5-Sonnet-20240620</em>)<br/>
+                    <strong>Prompt:</strong> "Solve this quadratic equation step by step: x^2 - 5x + 6 = 0"
+                </p>
+                <p>
+                    <em>Why It Succeeded:</em> Provided a clear multi-step solution and verified correctness at each stage, demonstrating meticulous reasoning ⚙️.
+                </p>
+                <p>
+                    <strong>Poor Performer:</strong> LangChain Wolfram Alpha (<em>llama-3.1-70B-instruct</em>)<br/>
+                    <em>Why It Failed:</em> Encountered runtime or library import errors, preventing a complete computational result—a reminder of how robust environment support is critical.
+                </p>
+
+                <h4>3. Knowledge Bases</h4>
+                <p>
+                    <strong>Top Performer:</strong> LangChain OpenWeatherMap (<em>gpt-4o-mini-2024-07-18</em>)<br/>
+                    <strong>Prompt:</strong> "What is the weather in Geneva?"
+                </p>
+                <p>
+                    <em>Why It Succeeded:</em> Combined real-time data with clear formatting, effectively conveying temperature, wind speeds, and humidity for a user-friendly forecast.
+                </p>
+                <p>
+                    <strong>Poor Performer:</strong> LlamaIndex OpenWeatherMap (<em>mistral-large-2407</em>)<br/>
+                    <em>Why It Failed:</em> Configuration conflicts precluded an accurate response, underscoring the importance of synchronization between tool APIs and model logic.
+                </p>
+
+                <h4>4. Code Interpreter</h4>
+                <p>
+                    <strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)<br/>
+                    <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
+                </p>
+                <p>
+                    <em>Why It Succeeded:</em> Generated a valid SQL query and provided an itemized explanation of each step, referencing plausible database schemas for immediate usability.
+                </p>
+                <p>
+                    <strong>Poor Performer:</strong> LlamaIndex Code Interpreter (<em>gpt-4-turbo-2024-04-09</em>)<br/>
+                    <em>Why It Failed:</em> Multiple dependency errors and an absence of fallback procedures produced incomplete code, emphasizing the necessity for robust error handling.
+                </p>
+
+                <h2 id="conclusion">🎉 Conclusion</h2>
+                <p>
+                    The second release of the Agent Arena dataset yields a more comprehensive picture of how models, frameworks, and tools collectively shape agent performance across various tasks. Key factors include:
+                </p>
+                <ul>
+                    <li><strong>Deeper Multi-Step Reasoning</strong></li>
+                    <li><strong>Effective Tool Integration</strong></li>
+                    <li><strong>Rigorous Error Handling</strong></li>
+                    <li><strong>Domain-Specific Adaptation</strong></li>
+                </ul>
+                <p>
+                    We invite the community to consult the <em>Agent Arena Evaluation Resources</em>, experiment with the newly published battle data, and keep expanding our leaderboard with fresh tasks and queries. Whether you specialize in optimizing chain-of-thought or matching specific models with specialized tools, Agent Arena aspires to support and accelerate progress in LLM-based systems.
+                </p>
+                <p>
+                    We appreciate your interest in these latest findings and look forward to further collaborations 🤝 as we refine and enhance the agentic capabilities of large language models across multiple real-world use cases.
+                </p>
+
+                <hr class="post-separator" />
+                <div class="citation-container">
+                    <h4 class="citation-title">Citation</h4>
+                    <p class="citation-intro">
+                        If you wish to cite Agent Arena or our updated dataset:
+                    </p>
+                    <pre class="citation-block"><code>@inproceedings{agent-arena-v2,
+  title={Agent Arena V2: Updated Dataset Release},
+  author={Nithik Yekollu and Arth Bohra and Ashwin Chirumamilla and Kai Wen and
+          Sai Kolasani and Wei-Lin Chiang and Anastasios Angelopoulos and
+          Joseph Gonzalez and Ion Stoica and Shishir G. Patil},
+  year={2025},
+  howpublished={\url{https://gorilla.cs.berkeley.edu/blogs/agent_arena_v2_release.html}}
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMoreBlogs() {
+            var subMenu = document.querySelector('.more-blogs .sub-menu');
+            var parentItem = document.querySelector('.more-blogs');
+            subMenu.classList.toggle('expanded');
+            parentItem.classList.toggle('expanded');
+        }
+
+        function toggleCode(elementId) {
+            var x = document.getElementById(elementId);
+            var toggleText = document.querySelector('[onclick="toggleCode(\'' + elementId + '\')"]');
+            if (x.style.display === "none") {
+                x.style.display = "block"; // Show the code section
+                toggleText.textContent = toggleText.textContent.replace('+ Show', '- Hide');
+            } else {
+                x.style.display = "none"; // Hide the code section
+                toggleText.textContent = toggleText.textContent.replace('- Hide', '+ Show');
+            }
+        }
+    </script>
+</body>
+
+</html>
