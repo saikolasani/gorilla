@@ -973,7 +973,7 @@
                             </pre> 
             
                             <p>
-                                <strong>Top Performer: </strong> Langchain google-serper search agent (llama-3.1-405B-instruct)<br/><br/>
+                                <strong>Top Performer (Rank 1): </strong> Langchain Google-Serper Search Agent (llama-3.1-405B-instruct)<br/><br/>
                                 <strong>Performance: </strong>Langchain google-serper search is our highest ranked agent for Search Engines. Using the google-serper tool
                                 paired with the llama-3.1-405B-instruct model, this agent effectively retrieved and
                                 analyzed search results to provide an insightful and well-structured response. It highlighted studies and trends related to French wine
@@ -991,7 +991,7 @@
                                 </ul>
                                 <br/>
 
-                                <strong>Poor Performer: </strong>Langchain brave-search agent (gpt-4o-2024-05-13)<br/><br/>
+                                <strong>Poor Performer (Rank 30): </strong>Langchain Brave-Search Agent (gpt-4o-2024-05-13)<br/><br/>
                                 <strong>Performance: </strong>Langchain brave-search is our 30th ranked agent for Search Engines. Despite leveraging the BraveSearch tool and the gpt-4o-2024-05-13 model, this agent failed to deliver a meaningful
                                 response. Its implementation of ZERO_SHOT_REACT_DESCRIPTION was insufficient for synthesizing complex information, resulting in shallow
                                 outputs. While the agent retrieved some relevant links, it lacked the analytical capabilities needed to extract and compile meaningful content
@@ -1222,7 +1222,7 @@
                         </p>
 
                               <!-- Code Interpreter -->
-                              <h4>Code Interpreter</h4>
+                              <h4>Code Interpreter TODO</h4>
                               <p><strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)</p>
                               <blockquote class="quote-block">
                                   <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
@@ -1245,7 +1245,30 @@
                                   <li><strong>Weaknesses:</strong> Dependency-related failures; lack of fallback strategies for generating partial results.</li>
                               </ul>
                               <p><strong>Key Takeaway:</strong> Effective code interpreters combine technical accuracy with resilience to errors. Ensuring proper dependency management and providing clear feedback can significantly improve outcomes in programming tasks.</p>
+                            
+                              <h4>Math/CS Academic Search TODO</h4>
+                              <p><strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> This agent generated an accurate SQL query to identify the most frequently used ingredient. It included assumptions about the database schema (like <code>recipes</code>, <code>ingredients</code>, and <code>recipe_ingredients</code> tables) and provided detailed commentary on each step of the query.
+                              </p>
+                              <ul>
+                                  <li><strong>Strengths:</strong> Accurate understanding of database schema requirements; clear explanation of the SQL query's logic; effective communication of constraints and assumptions.</li>
+                              </ul>
               
+                              <p><strong>Poor Performer:</strong> LlamaIndex Code Interpreter (<em>gpt-4-turbo-2024-04-09</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> The agent encountered multiple runtime errors due to dependency issues and failed to produce a valid SQL query. Its output did not provide actionable feedback or alternative approaches to resolving the problem.
+                              </p>
+                              <ul>
+                                  <li><strong>Weaknesses:</strong> Dependency-related failures; lack of fallback strategies for generating partial results.</li>
+                              </ul>
+                              <p><strong>Key Takeaway:</strong> Effective code interpreters combine technical accuracy with resilience to errors. Ensuring proper dependency management and providing clear feedback can significantly improve outcomes in programming tasks.</p>
                               <h2 id="conclusion">🎉 Conclusion</h2>
                               <p>
                                   This updated dataset and analysis underscore how models, frameworks, and tools can dramatically impact an agent’s ability to solve tasks. By comparing performance within domains like search, code interpretation, or knowledge retrieval, we see varied strengths and limitations across different configurations. These findings are not exhaustive; instead, they open the door to multiple ways of dissecting performance—whether by specific tasks, tool usage patterns, or user-defined criteria.
