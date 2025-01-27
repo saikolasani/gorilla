@@ -411,9 +411,6 @@
                         <li><strong>Analysis of Models:</strong> Why do models such as Llama-70B and Open-Mixtral-8x7B
                             excel at agentic tasks? How do they contrast with lower-performing models like
                             Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002?</li>
-                        <li><strong>Framework Comparisons:</strong> What sets frameworks such as LlamaIndex apart from
-                            LangChain or CrewAI? We highlight direct battles to illustrate specific advantages and
-                            weaknesses.</li>
                         <li><strong>Domain-Specific Insights:</strong> Which models or frameworks excel in specialized
                             contexts (e.g., finance, code, or research)? We analyze how the leaderboard evolves when
                             filtered by domain, identifying salient performance patterns.</li>
@@ -428,63 +425,7 @@
                         and the key insights it reveals.
                     </p>
                 </div>
-
-                <h2 id="elo-updates">💯 ELO-Based Rating Updates</h2>
-                <p>
-                    With over 2,500 user-submitted battles, we have refined our Elo-based rating methodology to evaluate
-                    not only agents as holistic entities but also subcomponents—including models, frameworks, and tools.
-                    This granular approach offers a clearer understanding of which factors drive success or impede
-                    performance.
-                </p>
-                <p>
-                    Below is a concise summary of the top- and bottom-rated subcomponents identified in our updated
-                    leaderboard:
-                </p>
-                <ul>
-                    <li><strong>Top-Rated Tool:</strong> riza-code-interpreter (ELO: 1228.03)</li>
-                    <ul>
-                        <li><em>Example from Dataset:</em> Highly effective in tasks requiring structured computation or
-                            code-driven data analysis, thanks to deterministic outputs.</li>
-                        <li><em>Why It Shines:</em> Code interpreters generally excel at well-defined tasks where
-                            step-by-step calculations minimize ambiguity and user guesswork 📐.</li>
-                    </ul>
-                    <li><strong>Low-Rated Tool:</strong> google-lens (ELO: 798.16)</li>
-                    <ul>
-                        <li><em>Example from Dataset:</em> Encountered recurring issues in complex or multi-step prompts
-                            mixing image and textual analysis.</li>
-                        <li><em>Why It Struggles:</em> A narrower focus on image recognition limits adaptability when
-                            tasks require extensive textual reasoning or advanced context.</li>
-                    </ul>
-                    <li><strong>Top-Rated Model:</strong> llama-3.1-70B-instruct (ELO: 1045.42)</li>
-                    <ul>
-                        <li><em>Example from Dataset:</em> Repeatedly showcases robust reasoning and contextual
-                            awareness, from summarizing research papers to advanced code usage.</li>
-                        <li><em>Why It Excels:</em> Larger-parameter models typically handle complex instructions with
-                            higher accuracy and deeper cross-domain awareness.</li>
-                    </ul>
-                    <li><strong>Low-Rated Model:</strong> gemini-1.5-pro-002 (ELO: 950.74)</li>
-                    <ul>
-                        <li><em>Example from Dataset:</em> Often fails on tasks needing multi-step logic or specialized
-                            knowledge, reverting to shallow or repetitive content.</li>
-                        <li><em>Why It Struggles:</em> Smaller parameter sizes or less domain-oriented training can
-                            reduce its ability to perform in-depth analyses or combine multiple data sources.</li>
-                    </ul>
-                    <li><strong>Top-Rated Framework:</strong> llamaindex (ELO: 1086.73)</li>
-                    <ul>
-                        <li><em>Example from Dataset:</em> Adept with SQL queries and multi-source retrieval,
-                            consistently outperforming generalized frameworks in tasks demanding precision.</li>
-                        <li><em>Why It Leads:</em> LlamaIndex emphasizes structured indexing and retrieval, a
-                            methodology that translates to refined solutions for demanding enterprise or research
-                            environments.</li>
-                    </ul>
-                    <li><strong>Low-Rated Framework:</strong> openai assistants (ELO: 943.28)</li>
-                    <ul>
-                        <li><em>Example from Dataset:</em> Frequently produced broad or generic statements when
-                            confronted with multilayered tasks or code-based queries.</li>
-                        <li><em>Why It Lags:</em> Lacking advanced functionality or fallback strategies, openai
-                            assistants often fail to execute the complex reasoning users require.</li>
-                    </ul>
-                </ul>
+              
 
                 <h2 id="analysis-of-models">🔎 Analysis of Models</h2>
                 <p>
@@ -823,198 +764,207 @@
                     practically useful for someone actually wanting to make soap.
                 </p>
 
-                <h2 id="analysis-of-frameworks">🔧 Analysis of Frameworks</h2>
-                <p>
-                    Beyond mere model design, the <strong>framework</strong> chosen—such as <em>LangChain</em>,
-                    <em>LlamaIndex</em>, <em>CrewAI</em>, or <em>OpenAI Assistants</em>—significantly shapes an agent's
-                    robustness and complexity handling. Our results reinforce that <em>LlamaIndex</em> is consistently
-                    competitive in structured data settings, while <em>OpenAI Assistants</em> often lag behind on tasks
-                    demanding multiple interaction steps.
-                </p>
 
-                <h4>Top-Performing Framework: LlamaIndex (ELO: 1086.73)</h4>
-                <ul>
-                    <li><strong>Advanced SQL Optimizations:</strong> Recommends tangible improvements in schema design,
-                        indexing, or subqueries with clarity and depth.</li>
-                    <li><strong>Comprehensive Data Integration:</strong> Identifies, then addresses, friction points
-                        across data pipelines, including parallelization for large-scale tasks.</li>
-                    <li><strong>Cross-Domain Reliability:</strong> Successfully tackles challenges in both technical
-                        (e.g., ArXiv research) and practical (e.g., flight search) domains, leveraging robust retrieval
-                        structures.</li>
-                </ul>
 
-                <h4>Worst-Performing Framework: OpenAI Assistants (ELO: 943.28)</h4>
-                <ul>
-                    <li><strong>Generic Answers:</strong> Often defaults to surface-level content when encountering
-                        specialized tasks or unique domains 🤨.</li>
-                    <li><strong>Inadequate Error Recovery:</strong> Lacks mechanisms to gracefully handle runtime or
-                        integration disruptions, yielding incomplete results.</li>
-                    <li><strong>Insufficient Specialization:</strong> Proves less effective on multi-step or heavily
-                        contextual queries, delivering broad guidance rather than detail-rich outputs.</li>
-                </ul>
-
-                <h2 id="domain-specific-insights">🌐 Domain-Specific Insights</h2>
-                <p>
-                    By tagging and categorizing battles based on domains (finance, education, medical, etc.), the Agent
-                    Arena reveals patterns that go beyond simple Elo values. Key highlights include:
-                </p>
-                <ul>
-                    <li><strong>Llama-70B + LangChain</strong> emerges as a strong pair in research-centric and
-                        data-intensive tasks, achieving an ~85% win rate.</li>
-                    <li><strong>Open-Mixtral-8x7B + Google-Serper</strong> excels at summarization or rapid knowledge
-                        synthesis, consistently surpassing ~88% success in retrieval-driven scenarios.</li>
-                    <li><strong>Gemini-1.5-Pro-002</strong> surprisingly demonstrates a ~75% success rate in code
-                        interpreter tasks, underscoring that even lower-ranked models may thrive in specific niches.
-                    </li>
-                </ul>
-                <p>
-                    Limiting the battles to a particular tool or domain offers detailed insights into each model's
-                    strengths. Such analyses often showcase hidden capabilities, guiding developers in strategically
-                    pairing models with the tools that best complement their skill sets.
-                </p>
-                <h4>Complementary vs. Competitive Interactions 🤝</h4>
-                <p>
-                    Intriguingly, certain agents converge on the same correct answer using different logical routes,
-                    underscoring the flexibility of large language models in problem-solving. Conversely, significant
-                    disagreements frequently underscore the edge held by an agent with more rigorous, evidence-based
-                    reasoning. Studying "disagreement prompts" has proven invaluable in refining chain-of-thought
-                    strategies.
-                </p>
-
-                <h2 id="example-insights">📝 Example Insights by Category</h2>
-                <p>
-                    Illustrated below are concise examples highlighting scenarios where an agent excels or
-                    underperforms, focusing on the tools employed, nature of the prompt, and potential reasons for each
-                    outcome.
-                </p>
-
-                <h4>1. Search Engines</h4>
-                <p>
-                    <strong>Top Performer:</strong> LangChain Google-Serper Search Agent
-                    (<em>llama-3.1-405B-instruct</em>)<br />
-                    <strong>Prompt:</strong> "Summarize a fascinating article about chairs."
-                </p>
-                <p>
-                    <em>Why It Succeeded:</em> Integrated historical context, design principles, and cultural variations
-                    into a coherent, well-researched summary.
-                </p>
-                <p>
-                    <strong>Poor Performer:</strong> LangChain Brave-Search Agent (<em>gemini-1.5-pro-001</em>)<br />
-                    <em>Why It Failed:</em> Produced fragmentary outputs that did not consolidate retrieved data,
-                    culminating in vague or apologetic text rather than a meaningful synopsis.
-                </p>
-
-                <h4>2. Simple Math</h4>
-                <p>
-                    <strong>Top Performer:</strong> Anthropic Calculator Tool
-                    (<em>Claude-3-5-Sonnet-20240620</em>)<br />
-                    <strong>Prompt:</strong> "Solve this quadratic equation step by step: x^2 - 5x + 6 = 0"
-                </p>
-                <p>
-                    <em>Why It Succeeded:</em> Provided a clear multi-step solution and verified correctness at each
-                    stage, demonstrating meticulous reasoning ⚙️.
-                </p>
-                <p>
-                    <strong>Poor Performer:</strong> LangChain Wolfram Alpha (<em>llama-3.1-70B-instruct</em>)<br />
-                    <em>Why It Failed:</em> Encountered runtime or library import errors, preventing a complete
-                    computational result—a reminder of how robust environment support is critical.
-                </p>
-
-                <h4>3. Knowledge Bases</h4>
-                <p>
-                    <strong>Top Performer:</strong> LangChain OpenWeatherMap (<em>gpt-4o-mini-2024-07-18</em>)<br />
-                    <strong>Prompt:</strong> "What is the weather in Geneva?"
-                </p>
-                <p>
-                    <em>Why It Succeeded:</em> Combined real-time data with clear formatting, effectively conveying
-                    temperature, wind speeds, and humidity for a user-friendly forecast.
-                </p>
-                <p>
-                    <strong>Poor Performer:</strong> LlamaIndex OpenWeatherMap (<em>mistral-large-2407</em>)<br />
-                    <em>Why It Failed:</em> Configuration conflicts precluded an accurate response, underscoring the
-                    importance of synchronization between tool APIs and model logic.
-                </p>
-
-                <h4>4. Code Interpreter</h4>
-                <p>
-                    <strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)<br />
-                    <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all
-                    recorded pie recipes."
-                </p>
-                <p>
-                    <em>Why It Succeeded:</em> Generated a valid SQL query and provided an itemized explanation of each
-                    step, referencing plausible database schemas for immediate usability.
-                </p>
-                <p>
-                    <strong>Poor Performer:</strong> LlamaIndex Code Interpreter (<em>gpt-4-turbo-2024-04-09</em>)<br />
-                    <em>Why It Failed:</em> Multiple dependency errors and an absence of fallback procedures produced
-                    incomplete code, emphasizing the necessity for robust error handling.
-                </p>
-
-                <h2 id="conclusion">🎉 Conclusion</h2>
-                <p>
-                    The second release of the Agent Arena dataset yields a more comprehensive picture of how models,
-                    frameworks, and tools collectively shape agent performance across various tasks. Key factors
-                    include:
-                </p>
-                <ul>
-                    <li><strong>Deeper Multi-Step Reasoning</strong></li>
-                    <li><strong>Effective Tool Integration</strong></li>
-                    <li><strong>Rigorous Error Handling</strong></li>
-                    <li><strong>Domain-Specific Adaptation</strong></li>
-                </ul>
-                <p>
-                    We invite the community to consult the <em>Agent Arena Evaluation Resources</em>, experiment with
-                    the newly published battle data, and keep expanding our leaderboard with fresh tasks and queries.
-                    Whether you specialize in optimizing chain-of-thought or matching specific models with specialized
-                    tools, Agent Arena aspires to support and accelerate progress in LLM-based systems.
-                </p>
-                <p>
-                    We appreciate your interest in these latest findings and look forward to further collaborations 🤝
-                    as we refine and enhance the agentic capabilities of large language models across multiple
-                    real-world use cases.
-                </p>
-
-                <hr class="post-separator" />
-                <div class="citation-container">
-                    <h4 class="citation-title">Citation</h4>
-                    <p class="citation-intro">
-                        If you wish to cite Agent Arena or our updated dataset:
-                    </p>
-                    <pre class="citation-block"><code>@inproceedings{agent-arena-v2,
-  title={Agent Arena V2: Updated Dataset Release},
-  author={Nithik Yekollu and Arth Bohra and Ashwin Chirumamilla and Kai Wen and
-          Sai Kolasani and Wei-Lin Chiang and Anastasios Angelopoulos and
-          Joseph Gonzalez and Ion Stoica and Shishir G. Patil},
-  year={2025},
-  howpublished={\url{https://gorilla.cs.berkeley.edu/blogs/agent_arena_v2_release.html}}
-}
-</code></pre>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function toggleMoreBlogs() {
-            var subMenu = document.querySelector('.more-blogs .sub-menu');
-            var parentItem = document.querySelector('.more-blogs');
-            subMenu.classList.toggle('expanded');
-            parentItem.classList.toggle('expanded');
-        }
-
-        function toggleCode(elementId) {
-            var x = document.getElementById(elementId);
-            var toggleText = document.querySelector('[onclick="toggleCode(\'' + elementId + '\')"]');
-            if (x.style.display === "none") {
-                x.style.display = "block"; // Show the code section
-                toggleText.textContent = toggleText.textContent.replace('+ Prompt Execution', '- Hide Execution');
-            } else {
-                x.style.display = "none"; // Hide the code section
-                toggleText.textContent = toggleText.textContent.replace('- Hide Execution', '+ Prompt Execution');
-            }
-        }
-    </script>
-</body>
+                              <!-- Domain Specific Insights -->
+                              <h2 id="domain-specific-insights">🌐 Domain-Specific Insights</h2>
+                              <p>
+                                  Agent Arena tags and filters battles across various domains—finance, education, medical, programming, etc.—revealing unique performance patterns. Certain models or frameworks excel in specialized tasks, while others demonstrate broader but shallower strengths.
+                              </p>
+                              <p>
+                                  Below, we showcase <strong>top-performing</strong> and <strong>bottom-performing</strong> agents for specific domain tasks, illustrating how domain expertise and tool usage can drive success or failure.
+                              </p>
+              
+                              <!-- Model/Tool Pairings -->
+                              <h2 id="model-tool-pairings">⚙️ Model/Tool Pairings</h2>
+                              <p>
+                                  When evaluating the performance of LLM agents, isolating one of the three agent components—model, framework, or tool—can yield valuable insights. For instance, fixing a particular tool (e.g., <em>Google-Serper</em>) clarifies how effectively different models leverage that resource to produce coherent and accurate outputs.
+                              </p>
+                              <p>
+                                  By comparing agents on a subset of fixed tools, we can identify which models excel at certain tasks and generate insights into model selection when building new agents. Here are two examples:
+                              </p>
+              
+                              <h4>Model + Search Engine Tools</h4>
+                              <p>
+                                  <em><strong>Llama-70B</strong> tops the leaderboards for overall usage of search tools like Google-Serper and Brave-Search (min. 5 battles)</em><br/>
+                                  <strong>Llama-70B Win Rate:</strong> <em>60.27% across all domains</em>
+                              </p>
+                              <p>
+                                  In this pairing, we fixed the tool subset to all five search engine tools in the Agent Arena ecosystem (<em>Google-Serper, Brave-Search, Tavily-Search, You-Search,</em> and <em>Exa-Search</em>). We found that <em>Llama-3.1-70B</em> performs the best, with a win rate of <strong>60.27%</strong>, followed by <em>Open-Mixtral-8x7B</em> (<strong>58.33%</strong>) and <em>Claude-3-Opus</em> (<strong>57.32%</strong>).
+                              </p>
+                              <p style="text-align: center;">
+                                  <img src="../assets/img/blog_post_15_search_engine.png" alt="Search Engine Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
+                                  <br/><em style="font-size:0.9em;">Figure 1. Win rates for models using search engine tools.</em>
+                              </p>
+              
+                              <h4>Model + Code Interpreter Tools</h4>
+                              <p>
+                                  <em><strong>Gemini-1.5</strong> tops the leaderboards for code interpreter tools like Riza Code Interpreter and Python REPL (min. 5 battles)</em><br/>
+                                  <strong>Gemini-1.5 Win Rate:</strong> <em>75.00% across all domains</em>
+                              </p>
+                              <p>
+                                  By restricting the tool subset to code interpreter tools (<em>Riza Code Interpreter, OpenAI Assistant Code Interpreter, Python REPL,</em> and <em>LlamaIndex Code Interpreter</em>), <em>Gemini-1.5</em> surprisingly comes out ahead, achieving a <strong>75%</strong> success rate. It outperforms <em>Claude-3.5-Sonnet</em> (<strong>66.67%</strong>) and <em>Open-Mixtral-8x22B</em> (<strong>60.00%</strong>).
+                              </p>
+                              <p style="text-align: center;">
+                                  <img src="../assets/img/blog_post_15_code_interpreter.png" alt="Code Interpreter Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
+                                  <br/><em style="font-size:0.9em;">Figure 2. Win rates for models using code interpreter tools.</em>
+                              </p>
+              
+                              <!-- Example Insights by Category -->
+                              <h2 id="example-insights">📝 Example Insights by Category</h2>
+                              <p>
+                                  The following section explores agent performance across different categories by highlighting examples of the highest- and lowest-performing agents. These insights provide an in-depth understanding of how agents excel or struggle in specific tasks, with detailed observations on why certain agents achieve better results and the challenges faced by underperforming ones.
+                              </p>
+              
+                              <!-- Search Engines -->
+                              <h4>Search Engines</h4>
+                              <p><strong>Top Performer:</strong> LangChain Google-Serper Search Agent (<em>llama-3.1-405B-instruct</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "Summarize a fascinating article about chairs."
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> This agent successfully used the Google Serper tool to find relevant content and synthesize a meaningful response. It retrieved detailed information about the evolution of chairs and highlighted key points such as historical origins, cultural differences in design, and the challenge of creating a well-designed chair. The output was well-structured, engaging, and met the user's expectations for a fascinating summary.
+                              </p>
+                              <ul>
+                                  <li><strong>Strengths:</strong> Robust search capabilities using Google Serper; effective summarization with contextual insights; ability to handle ambiguous prompts creatively.</li>
+                              </ul>
+              
+                              <p><strong>Poor Performer:</strong> LangChain Brave-Search Agent (<em>gemini-1.5-pro-001</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "Summarize a fascinating article about chairs."
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> This agent struggled to provide a comprehensive response. Despite retrieving potential links and snippets, it failed to analyze the content and returned a vague apology for not being able to summarize external articles. The response lacked depth and did not meet user expectations.
+                              </p>
+                              <ul>
+                                  <li><strong>Weaknesses:</strong> Inability to extract meaningful content from retrieved links; poor handling of tasks requiring integration of multiple search results.</li>
+                              </ul>
+                              <p><strong>Key Takeaway:</strong> Agents like LangChain Google-Serper perform well because they integrate retrieval and analysis effectively. Enhancing parsing capabilities and output synthesis could improve lower-performing agents.</p>
+              
+                              <!-- Simple Math -->
+                              <h4>Simple Math</h4>
+                              <p><strong>Top Performer:</strong> Anthropic Calculator Tool (<em>Claude-3-5-Sonnet-20240620</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "Solve this quadratic equation step by step: x^2 - 5x + 6 = 0"
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> The agent provided a detailed, step-by-step solution using the quadratic formula. It identified coefficients, performed intermediate calculations, and explained each step clearly. The final output included both roots and verified the correctness of the solution using its built-in calculator tool.
+                              </p>
+                              <ul>
+                                  <li><strong>Strengths:</strong> Clear and structured explanation; effective use of built-in tools for validation; accurate mathematical computation.</li>
+                              </ul>
+              
+                              <p><strong>Poor Performer:</strong> LangChain Wolfram Alpha (<em>llama-3.1-70B-instruct</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "Solve this quadratic equation step by step: x^2 - 5x + 6 = 0"
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> The agent failed to execute the task due to errors in its code implementation. It encountered issues with importing the required libraries and validating configurations, resulting in no meaningful output.
+                              </p>
+                              <ul>
+                                  <li><strong>Weaknesses:</strong> Lack of error handling for runtime issues; inadequate preparation for mathematical tasks.</li>
+                              </ul>
+                              <p><strong>Key Takeaway:</strong> While top-performing agents excel in structured problem-solving and verification, addressing implementation-level challenges is crucial for improving reliability in mathematical problem-solving.</p>
+              
+                              <!-- Knowledge Bases -->
+                              <h4>Knowledge Bases</h4>
+                              <p><strong>Top Performer:</strong> LangChain OpenWeatherMap (<em>gpt-4o-mini-2024-07-18</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "What's the weather in Geneva?"
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> The agent effectively used the OpenWeatherMap API to retrieve accurate, real-time weather data for Geneva. It presented a detailed response, including temperature, wind speed, humidity, and a summary of weather conditions ("clear sky").
+                              </p>
+                              <ul>
+                                  <li><strong>Strengths:</strong> Seamless integration with external APIs; accurate data retrieval and user-friendly presentation; ability to handle location-specific queries.</li>
+                              </ul>
+              
+                              <p><strong>Poor Performer:</strong> LlamaIndex OpenWeatherMap (<em>mistral-large-2407</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "What's the weather in Geneva?"
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> This agent failed to execute the query due to incorrect model configuration and tool integration. It encountered runtime errors related to unsupported model APIs and produced no usable output.
+                              </p>
+                              <ul>
+                                  <li><strong>Weaknesses:</strong> Misaligned configuration with tool requirements; lack of fallback mechanisms for incomplete responses.</li>
+                              </ul>
+                              <p><strong>Key Takeaway:</strong> Successful agents demonstrate strong API integrations and error handling. Improving tool compatibility and ensuring robust error recovery mechanisms can boost agent performance in knowledge-based tasks.</p>
+              
+                              <!-- Code Interpreter -->
+                              <h4>Code Interpreter</h4>
+                              <p><strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> This agent generated an accurate SQL query to identify the most frequently used ingredient. It included assumptions about the database schema (like <code>recipes</code>, <code>ingredients</code>, and <code>recipe_ingredients</code> tables) and provided detailed commentary on each step of the query.
+                              </p>
+                              <ul>
+                                  <li><strong>Strengths:</strong> Accurate understanding of database schema requirements; clear explanation of the SQL query's logic; effective communication of constraints and assumptions.</li>
+                              </ul>
+              
+                              <p><strong>Poor Performer:</strong> LlamaIndex Code Interpreter (<em>gpt-4-turbo-2024-04-09</em>)</p>
+                              <blockquote class="quote-block">
+                                  <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
+                              </blockquote>
+                              <p>
+                                  <em>Performance:</em> The agent encountered multiple runtime errors due to dependency issues and failed to produce a valid SQL query. Its output did not provide actionable feedback or alternative approaches to resolving the problem.
+                              </p>
+                              <ul>
+                                  <li><strong>Weaknesses:</strong> Dependency-related failures; lack of fallback strategies for generating partial results.</li>
+                              </ul>
+                              <p><strong>Key Takeaway:</strong> Effective code interpreters combine technical accuracy with resilience to errors. Ensuring proper dependency management and providing clear feedback can significantly improve outcomes in programming tasks.</p>
+              
+                              <h2 id="conclusion">🎉 Conclusion</h2>
+                              <p>
+                                  By examining agent behavior in specific <strong>domains</strong>, analyzing <strong>model/tool pairings</strong>, and studying real examples of success and failure, we acquire a deeper understanding of how LLM agents perform in practice. Models like <strong>Llama-70B</strong> stand out for their multi-step reasoning, while <strong>Gemini-1.5</strong> unexpectedly excels in code interpretation tasks when paired with the right tools.
+                              </p>
+                              <p>
+                                  We invite researchers and practitioners alike to explore the newly released dataset, test different model-tool combinations, and submit further tasks to Agent Arena. By continuously refining the interplay between models, tools, and frameworks, the community can drive the development of more robust and versatile LLM agents.
+                              </p>
+              
+                              <hr class="post-separator" />
+                              <div class="citation-container">
+                                  <h4 class="citation-title">Citation</h4>
+                                  <p class="citation-intro">
+                                      If you wish to cite Agent Arena or our updated dataset:
+                                  </p>
+                                  <pre class="citation-block"><code>@inproceedings{agent-arena-v2,
+                title={Agent Arena V2: Updated Dataset Release},
+                author={Nithik Yekollu and Arth Bohra and Ashwin Chirumamilla and Kai Wen and
+                        Sai Kolasani and Wei-Lin Chiang and Anastasios Angelopoulos and
+                        Joseph Gonzalez and Ion Stoica and Shishir G. Patil},
+                year={2025},
+                howpublished={\url{https://gorilla.cs.berkeley.edu/blogs/agent_arena_v2_release.html}}
+              }
+              </code></pre>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <script>
+                      function toggleMoreBlogs() {
+                          var subMenu = document.querySelector('.more-blogs .sub-menu');
+                          var parentItem = document.querySelector('.more-blogs');
+                          subMenu.classList.toggle('expanded');
+                          parentItem.classList.toggle('expanded');
+                      }
+              
+                      function toggleCode(elementId) {
+                          var x = document.getElementById(elementId);
+                          var toggleText = document.querySelector('[onclick="toggleCode(\'' + elementId + '\')"]');
+                          if (x.style.display === "none") {
+                              x.style.display = "block"; // Show the code section
+                              toggleText.textContent = toggleText.textContent.replace('+ Prompt Execution', '- Hide Execution');
+                          } else {
+                              x.style.display = "none"; // Hide the code section
+                              toggleText.textContent = toggleText.textContent.replace('- Hide Execution', '+ Prompt Execution');
+                          }
+                      }
+                  </script>
+              </body>
+              
 
 </html>
