@@ -409,7 +409,7 @@
                     <ul>
                         <li><strong>Analysis of Models:</strong> What drives the success of models like Llama-70B and
                             Open-Mixtral-8x7B? How do they compare to lower-performing models such as
-                            Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002?</li>
+                            Llama-3.1-8B-Instruct and Gemini-1.5-flash-001?</li>
                         <li><strong>Domain-Specific Insights:</strong> Which models or frameworks excel in specialized
                             contexts (e.g., finance, code, or research)? We examine how leaderboard rankings shift when
                             filtered by domain, revealing distinct performance patterns.</li>
@@ -432,7 +432,8 @@
                 <p>
                     Our most recent battle data highlights the strengths of <strong>Llama-70B</strong> and
                     <strong>Open-Mixtral-8x7B</strong>, as well as the persistent shortcomings of
-                    <strong>Llama-3.1-8B-Instruct</strong> and <strong>Gemini-1.5-Pro-002</strong>.
+                    <strong>Llama-3.1-8B-Instruct</strong>, <strong>Gemini-1.5-flash-001</strong>, and
+                    <strong>Gemini-1.5-Pro-002</strong>.
                 </p>
                 <div style="text-align: center; margin: 20px 0;">
                     <img src="../assets/img/blog_post_15_models_leaderboard.png" alt="Model Leaderboard"
@@ -445,13 +446,13 @@
                     <strong>
                         <h5>Llama-70B</h5>
                     </strong><br />
-                    Our battle outcomes reveal Llama-70B's exceptional ability to handle complex queries through
-                    systematic analysis and technical precision. The model excels at synthesizing information, as
+                    Our battle outcomes reveal Llama-70B's ability to handle complex queries through
+                    systematic analysis and precision. The model excels at synthesizing information, as
                     demonstrated in its climate change response where it effectively connects scientific principles with
                     real-world implications. When explaining concepts like opportunity cost, it shows strong capability
                     in linking theoretical frameworks with practical applications. Through effective research
-                    integration and logical progression of ideas, Llama-70B consistently delivers comprehensive,
-                    evidence-based explanations that demonstrate deep understanding of complex topics.
+                    integration and logical progression of ideas, Llama-70B consistently delivers comprehensive and
+                    evidence-based explanations that demonstrate understanding of complex topics.
                 </p>
 
                 <blockquote class="quote-block">
@@ -518,12 +519,12 @@
                     <strong>Outcome:</strong> 🌍 In this comparison, Agent B (llama-3.1-70B-instruct with Wikipedia)
                     provided a more comprehensive and scientifically accurate explanation of the greenhouse effect and
                     climate change. While Agent A (gemini-1.5-pro with Google Serper) delivered a basic overview, Agent
-                    B systematically covered the fundamental mechanisms, natural versus enhanced effects, and human
-                    activities' impact. The response included specific technical details about radiation types,
+                    B covered the fundamental mechanisms, natural versus enhanced effects, and human
+                    activities' impact. The response included specific details about radiation types,
                     greenhouse gases (CO2 and methane), and mitigation approaches. Agent B's structured explanation
-                    progresses logically from basic mechanisms through to consequences and solutions. Through multiple
-                    Wikipedia queries, Agent B builds a thorough, evidence-based explanation that effectively connects
-                    scientific principles with real-world implications.
+                    progresses logically from basic mechanisms to consequences and solutions. Through multiple
+                    Wikipedia queries, Agent B builds a thorough and evidence-based explanation that effectively
+                    connects scientific principles with real-world implications.
                 </p>
 
                 <blockquote class="quote-block">
@@ -589,15 +590,15 @@
                 </pre>
                 <p>
                     <strong>Outcome:</strong> 📚 In this comparison, Agent A (llama-3.1-70B-instruct with Wikipedia)
-                    excelled by providing a comprehensive and detailed explanation of opportunity cost. It covered the
+                    excelled by providing a detailed explanation of opportunity cost. It covered the
                     basic definition, its relationship to scarcity and choice, and both explicit and implicit costs.
                     Agent A also explored non-monetary aspects such as time and utility, and connected the concept to
                     the Production Possibility Frontier (PPF). This depth of information provides valuable context for
                     understanding opportunity cost within the broader economic framework. In contrast, Agent B
                     (gpt-4o-2024-08-06 with Google Serper) offers a more concise definition, lacking the depth and
                     educational value found in Agent A's response. Agent A's thorough research process, involving
-                    multiple Wikipedia queries, results in a more contextualized and practical understanding of
-                    opportunity cost, making it superior for users seeking a well-rounded economic perspective.
+                    multiple Wikipedia queries, results in a more practical understanding of
+                    opportunity cost, making it more useful for users seeking a well-rounded economic perspective.
                 </p>
 
                 <h4>📉 Why Some Models Fall Short</h4>
@@ -608,14 +609,12 @@
                     Our battle outcomes reveal consistent limitations in Gemini-1.5-flash-001's performance. The model
                     tends to provide surface-level responses without diving into detailed analysis or specific evidence.
                     As seen in the musician comparison, it defaulted to listing multiple artists (Elvis, Beatles, Dylan,
-                    Chuck Berry) without substantiating why any might be more influential. In the soap-making example,
-                    it offered only vague instructions without crucial measurements or safety considerations. This
-                    pattern of superficial engagement extends to its handling of scientific topics, as demonstrated in
-                    the climate change discussion where it provided only basic mechanisms without exploring the
-                    interconnected effects. The model frequently avoids making definitive statements, often concluding
+                    Chuck Berry) without providing reasoning for why any might be more influential. In the soap-making
+                    example, it offered only vague instructions without measurements or safety considerations.
+                    The model frequently avoids making definitive statements, often concluding
                     with phrases like "it's difficult to say" rather than building well-reasoned arguments. When faced
                     with complex queries requiring synthesis of multiple data points, it struggles to integrate
-                    information meaningfully or provide structured, comprehensive responses that would be practically
+                    information meaningfully or provide structured responses that would be practically
                     useful to users.
                 </p>
 
@@ -684,7 +683,7 @@
 
                 <p>
                     <strong>Outcome:</strong> 🎵 In this comparison, Agent B (claude-3-haiku with Wikipedia)
-                    demonstrated superior analysis and reasoning in determining the most influential musician. While
+                    demonstrated a better analysis and reasoning in determining the most influential musician. While
                     Agent A (gemini-1.5-flash-001 with Google Serper) provided a surface-level list of musicians without
                     detailed analysis, Agent B built a clear argument supporting David Bowie's influence. Agent B
                     provided in-depth information about Bowie's impact, comparing different artists, supporting claims
@@ -759,14 +758,14 @@
 
                 <p>
                     <strong>Outcome:</strong> 🧼 In this comparison, Agent B (Mixtral with Wikipedia) provided a
-                    superior explanation of soap-making through a comprehensive, safe, and detailed approach. While
+                    a better explanation of soap-making through a detailed approach. While
                     Agent A (gemini-1.5-flash-001 with Google Serper) offered only a vague overview without specific
                     measurements or steps, Agent B delivered a complete recipe with exact measurements (500g fats/oils,
-                    190g lye, 400ml water) and 11 detailed, numbered steps. Agent B also included crucial safety
-                    considerations about ventilation and handling lye, along with technical details about the
+                    190g lye, 400ml water) and 11 detailed steps. Agent B also included safety
+                    considerations about ventilation and handling lye, along with details about the
                     saponification process, proper temperature requirements (43°C/110°F), and the concept of "trace."
                     Furthermore, Agent B explained why each step is important, from the curing time (4-6 weeks) to
-                    achieving proper consistency. This thorough, well-structured response makes Agent B's answer more
+                    achieving proper consistency. This well-structured response makes Agent B's answer more
                     practically useful for someone actually wanting to make soap.
                 </p>
 
@@ -1528,7 +1527,7 @@
 
                 <h2 id="conclusion">🎉 Conclusion</h2>
                 <p>
-                    This updated dataset and analysis underscore how models, frameworks, and tools can dramatically
+                    This updated dataset and analysis underscore how models, frameworks, and tools can
                     impact an agent's ability to solve tasks. By comparing performance within domains like search, code
                     interpretation, or knowledge retrieval, we see varied strengths and limitations across different
                     configurations. These findings are not exhaustive; instead, they open the door to multiple ways of
