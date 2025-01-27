@@ -1222,30 +1222,91 @@
                         </p>
 
                               <!-- Code Interpreter -->
-                              <h4>Code Interpreter TODO</h4>
-                              <p><strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)</p>
+                              <h4>Code Interpreter</h4>
+
                               <blockquote class="quote-block">
-                                  <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
-                              </blockquote>
-                              <p>
-                                  <em>Performance:</em> This agent generated an accurate SQL query to identify the most frequently used ingredient. It included assumptions about the database schema (like <code>recipes</code>, <code>ingredients</code>, and <code>recipe_ingredients</code> tables) and provided detailed commentary on each step of the query.
-                              </p>
-                              <ul>
-                                  <li><strong>Strengths:</strong> Accurate understanding of database schema requirements; clear explanation of the SQL query's logic; effective communication of constraints and assumptions.</li>
-                              </ul>
-              
-                              <p><strong>Poor Performer:</strong> LlamaIndex Code Interpreter (<em>gpt-4-turbo-2024-04-09</em>)</p>
-                              <blockquote class="quote-block">
-                                  <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
-                              </blockquote>
-                              <p>
-                                  <em>Performance:</em> The agent encountered multiple runtime errors due to dependency issues and failed to produce a valid SQL query. Its output did not provide actionable feedback or alternative approaches to resolving the problem.
-                              </p>
-                              <ul>
-                                  <li><strong>Weaknesses:</strong> Dependency-related failures; lack of fallback strategies for generating partial results.</li>
-                              </ul>
-                              <p><strong>Key Takeaway:</strong> Effective code interpreters combine technical accuracy with resilience to errors. Ensuring proper dependency management and providing clear feedback can significantly improve outcomes in programming tasks.</p>
-                            
+                                <strong>Prompt:</strong> "Create a SQL query to find the most commonly used ingredient in all recorded pie recipes."
+                            </blockquote>
+                            <div class="code-toggle" onclick="toggleCode('code_interpreter_output')">+ Prompt Execution</div>
+                            <pre id="code_interpreter_output" style="display:none; white-space: pre; text-align: left;">
+                                <code>
+                                    {
+                                        "Prompt": "\"Create a SQL query to find the most commonly used ingredient in all recorded pie recipes.\"",
+                                        "Agent_A": {
+                                            "Agent name": "langchain Python REPL (gpt-4o-2024-05-13)",
+                                            "Code executed": "from langchain.agents import Tool\nfrom langchain_experimental.utilities import PythonREPL\nfrom langchain.agents import initialize_agent\n\npython_repl = PythonREPL()",
+                                            "Agent output": "/tmp/a2d731b7-645d-486a-9667-d395f2374fad.py:18:   agent = initialize_agent(tools, llm, agent=\"zero-shot-react-description\", verbose=True,  handle_parsing_errors=True)> Entering new AgentExecutor chain.../tmp/a2d731b7-645d-486a-9667-d395f2374fad.py:19: To create a SQL query to find the most commonly used ingredient in all recorded pie recipes, we need to consider the structure of the database. Typically, we would have at least two tables: one for the recipes and one for the ingredients. Let's assume the following structure:  agent.run(\"Create a SQL query to find the most commonly used ingredient in all recorded pie recipes.\")1. `recipes` table:   - `recipe_id` (Primary Key)   - `recipe_name`2. `ingredients` table:   - `ingredient_id` (Primary Key)   - `ingredient_name`3. `recipe_ingredients` table (a many-to-many relationship between recipes and ingredients):   - `recipe_id` (Foreign Key referencing `recipes.recipe_id`)   - `ingredient_id` (Foreign Key referencing `ingredients.ingredient_id`)Given this structure, we can write a SQL query to find the most commonly used ingredient. The query will join the tables and count the occurrences of each ingredient, then order the results by the count in descending order and limit the result to the top one.Here is the SQL query:```sqlSELECT i.ingredient_name, COUNT(ri.ingredient_id) AS usage_countFROM recipe_ingredients riJOIN ingredients i ON ri.ingredient_id = i.ingredient_idGROUP BY i.ingredient_nameORDER BY usage_count DESCLIMIT 1;```This query does the following:1. Joins the `recipe_ingredients` table with the `ingredients` table to get the ingredient names.2. Groups the results by `ingredient_name`.3. Counts the occurrences of each ingredient.4. Orders the results by the count in descending order.5. Limits the result to the top one, which is the most commonly used ingredient.Final Answer: The SQL query to find the most commonly used ingredient in all recorded pie recipes is:```sqlSELECT i.ingredient_name, COUNT(ri.ingredient_id) AS usage_countFROM recipe_ingredients riJOIN ingredients i ON ri.ingredient_id = i.ingredient_idGROUP BY i.ingredient_nameORDER BY usage_count DESCLIMIT 1;```>",
+                                            "Frameworks": [
+                                                "langchain"
+                                            ],
+                                            "Models": [
+                                                "gpt-4o-2024-05-13"
+                                            ],
+                                            "Tools": [
+                                                "python-repl"
+                                            ],
+                                            "Category": [
+                                                "Code Interpreter"
+                                            ],
+                                            "Tool Categories": [
+                                                "Code Interpreter"
+                                            ]
+                                        },
+                                        "Agent_B": {
+                                            "Agent name": "llamaindex code interpreter (gpt-4-turbo-2024-04-09)",
+                                            "Code executed": "from langchain_openai import ChatOpenAI\n\nllm = ChatOpenAI(model=\"gpt-4o-2024-05-13\", temperature=0)\n\n# You can also create a Tool instance to pass to an agent\nrepl_tool = Tool(\n    name=\"python_repl\",\n    description=\"A Python shell. Use this to execute python commands. Input should be a valid python command. If you want to see the output of a value, you should print it out with `print(...)`.\",\n    func=python_repl.run,\n)\n\ntools = [repl_tool]\nagent = initialize_agent(tools, llm, agent=\"zero-shot-react-description\", verbose=True,  handle_parsing_errors=True)\nagent.run(\"Create a SQL query to find the most commonly used ingredient in all recorded pie recipes.\")\n\nimport subprocess\nimport sys\n\nrequired_packages = [\n    \"llama-index-tools-code-interpreter\",\n]\n\nfor package in required_packages:\n    try:\n        subprocess.check_call([sys.executable, \"-m\", \"pip\", \"install\", \"--upgrade\", package])\n    except subprocess.CalledProcessError as e:\n        print(f\"Failed to install {package}: {e}\")\n        sys.exit(1)\nfrom llama_index.tools.code_interpreter import CodeInterpreterToolSpec\nfrom llama_index.agent.openai import OpenAIAgent\nfrom llama_index.llms.openai import OpenAI\n\n\ntool_spec = CodeInterpreterToolSpec()\n\nllm = OpenAI(model=\"gpt-4-turbo-2024-04-09\")\n\nagent = OpenAIAgent.from_tools(tool_spec.to_tool_list(), verbose=True, llm=llm)\n\n# Prime the agent to use the tool\nprint(agent.chat(\n    \"Create a SQL query to find the most commonly used ingredient in all recorded pie recipes.\"\n))",
+                                            "Agent output": "[notice] A new release of pip is available: 24.0 -> 24.2[notice] To update, run: pip install --upgrade pipAdded user message to memory: Create a SQL query to find the most commonly used ingredient in all recorded pie recipes.To create a SQL query that finds the most commonly used ingredient in all recorded pie recipes, you'll need to have a database schema that includes tables for recipes, ingredients, and a linking table that connects recipes to their ingredients. Assuming you have the following tables:1. `recipes` - Contains recipe details.   - `recipe_id` (Primary Key)   - `recipe_name`2. `ingredients` - Contains ingredient details.   - `ingredient_id` (Primary Key)   - `ingredient_name`3. `recipe_ingredients` - Links recipes to ingredients.   - `recipe_id` (Foreign Key)   - `ingredient_id` (Foreign Key)Here is a SQL query that finds the most commonly used ingredient in pie recipes:```sqlSELECT     i.ingredient_name,    COUNT(*) AS usage_countFROM     ingredients iJOIN     recipe_ingredients ri ON i.ingredient_id = ri.ingredient_idJOIN     recipes r ON ri.recipe_id = r.recipe_idWHERE     r.recipe_name LIKE '%pie%'  -- Assuming the recipe name contains the word 'pie' to identify pie recipesGROUP BY     i.ingredient_nameORDER BY     usage_count DESCLIMIT 1;```### Explanation:- **JOINs**: The query joins the `ingredients`, `recipe_ingredients`, and `recipes` tables to link each ingredient to its respective recipe.- **WHERE Clause**: It filters the recipes to include only those whose names contain \"pie\", assuming that's how pie recipes are identified in the `recipes` table.- **GROUP BY**: It groups the results by `ingredient_name` to aggregate data per ingredient.- **COUNT(*)**: This counts the number of times each ingredient appears across all pie recipes.- **ORDER BY**: It orders the results by `usage_count` in descending order to get the most used ingredient at the top.- **LIMIT 1**: This limits the output to the single most used ingredient.Make sure to adjust the field names and table names according to your actual database schema. If the schema or requirements differ significantly, the query will need to be adjusted accordingly.",
+                                            "Frameworks": [
+                                                "llamaindex"
+                                            ],
+                                            "Models": [
+                                                "gpt-4-turbo-2024-04-09"
+                                            ],
+                                            "Tools": [
+                                                "llamaindex-code-interpreter"
+                                            ],
+                                            "Category": [
+                                                "Code Interpreter"
+                                            ],
+                                            "Tool Categories": [
+                                                "Code Interpreter"
+                                            ]
+                                        },
+                                        "Rating": "A is better"
+                                    },
+                                </code>
+                            </pre>
+                            <p>
+                                <strong>Top Performer (Rank 2): </strong> LangChain Python REPL Agent (gpt-4o-2024-05-13)
+                                <br /><br />
+                                <strong>Performance: </strong>This agent efficiently generated a precise SQL query to determine the most commonly used
+                                ingredient. By leveraging the python-repl tool, it provided a clear and logical breakdown of the task, assuming a standard
+                                database schema and constructing the query with appropriate joins, grouping, and ordering. The result was well-structured,
+                                executable, and directly addressed the prompt's requirements without unnecessary complexity.
+                                <br />
+                                <strong></strong>
+                            <ul>
+                            </ul>
+                            <strong>Strengths:</strong>
+                            <ul>
+                                <li>Logical and clear SQL query generation.</li>
+                                <li>Accurate assumptions about database structure.</li>
+                            </ul>
+                            <br />
+                
+                            <strong>Poor Performer (Rank 17): </strong>LlamaIndex Code Interpreter Agent (gpt-4-turbo-2024-04-09)<br /><br />
+                            <strong>Performance: </strong>This agent produced a SQL query but introduced unnecessary complexity by relying on the
+                            llamaindex-code-interpreter tool. While the query was functional, its approach to filtering recipes based on names containing
+                            "pie" was less reliable and introduced potential inaccuracies. The additional steps and assumptions lowered
+                            clarity and directness of the output, making it less effective overall.
+                            <br /><br />
+                            <strong>Weaknesses:</strong>
+                            <ul>
+                                <li>Over-complicated with unnecessary tool usage; less effecient approach to task completion</li>
+                                <li>Assumptions about recipe identification that could reduce accuracy.</li>
+                            </ul>
+                            </p>
+
                               <h4>Math/CS Academic Search TODO</h4>
                               <p><strong>Top Performer:</strong> LangChain Python REPL (<em>gpt-4o-2024-05-13</em>)</p>
                               <blockquote class="quote-block">
