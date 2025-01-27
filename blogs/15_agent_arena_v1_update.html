@@ -319,16 +319,14 @@
 
     <div class="highlight-clean-blog" style="padding-bottom: 10px">
         <h1 class="text-center" style="padding-bottom: 10px;">
-            🤖 Agent Arena: V2 Dataset Release
+            🤖 Agent Arena: V1 Dataset Release
         </h1>
         <div class="box-index">
             <h3>Agent Arena</h3>
             <ul>
                 <ul>
                     <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#elo-updates">💯 ELO-Based Rating Updates</a></li>
                     <li><a href="#analysis-of-models">🔎 Analysis of Models</a></li>
-                    <li><a href="#analysis-of-frameworks">🔧 Analysis of Frameworks</a></li>
                     <li><a href="#domain-specific-insights">🌐 Domain-Specific Insights</a></li>
                     <li><a href="#example-insights">📝 Example Insights by Category</a></li>
                     <li><a href="#conclusion">🎉 Conclusion</a></li>
@@ -360,7 +358,7 @@
                 <h1 class="blog-title"
                     style="font-size: 2.2em; text-align: center; font-family: 'Arial'; font-weight:570; color: #007bff;">
                     <a href="https://www.agent-arena.com" style="text-decoration: none; color: inherit;">
-                        Agent Arena: V2 Dataset Release
+                        Agent Arena: V1 Dataset Release
                     </a>
                 </h1>
 
@@ -372,6 +370,7 @@
                             Yekollu</a>
                         <a class="author" href="https://www.linkedin.com/in/saikolasani/">Sai Kolasani</a>
                         <a class="author" href="https://www.linkedin.com/in/kaiwen129/">Kai Wen</a>
+                        <a class="author" href="https://www.linkedin.com/in/ranashreyas/">Shreyas Rana</a>
                         <a class="author" href="https://infwinston.github.io/">Wei-Lin Chiang</a>
                         <a class="author" href="https://people.eecs.berkeley.edu/~angelopoulos//">Anastasios
                             Angelopoulos</a>
@@ -385,16 +384,10 @@
                 <div class="preview">
                     <h2 id="introduction">Introduction</h2>
                     <p>
-                        Since its release last month, the Agent Arena has gathered over <strong>500 new user-submitted
-                            ratings</strong>, bringing our total to an impressive <strong>2,671 pairwise
-                            comparisons</strong>. This expansion is particularly noteworthy 🎉 as it permits the
-                        publication of a <strong>new dataset of battle results</strong> in tandem with an updated
-                        Elo-based rating system for evaluating agents.
+                        Since its release, the Agent Arena has gathered over <strong>500 new user-submitted ratings</strong>, bringing our total to an impressive <strong>2,671 pairwise comparisons</strong>. This growth marks a significant milestone 🎉, enabling the publication of a <strong>new dataset of battle results</strong> alongside an updated Elo-based rating system for evaluating agents.
                     </p>
                     <p style="margin-left: 40px;">
-                        As part of this update, we are also sharing an interactive notebook to aid users in exploring
-                        these ratings and uncover deeper insights into our evolving rankings. You may access the new
-                        battle dataset and the Elo calculation notebook here:
+                        As part of this update, we are introducing an interactive notebook to help users explore these ratings and uncover deeper insights into our evolving rankings. You can access the new battle dataset and the Elo calculation notebook here:
                         <br>
                         <strong><em>
                                 <br>
@@ -403,28 +396,20 @@
                             </em></strong>
                     </p>
                     <p>
-                        In this blog, we aim to <strong>look beyond raw metrics</strong> and address the question of why
-                        certain agents and their subcomponents continue to outperform others. By leveraging our newly
-                        updated battle data, we delve into critical insights across several dimensions:
+                        In this blog, we aim to <strong>go beyond the raw metrics</strong> to explore why certain agents and their subcomponents consistently outperform others. By analyzing the updated battle data, we uncover critical insights across several dimensions:
                     </p>
                     <ul>
-                        <li><strong>Analysis of Models:</strong> Why do models such as Llama-70B and Open-Mixtral-8x7B
-                            excel at agentic tasks? How do they contrast with lower-performing models like
-                            Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002?</li>
-                        <li><strong>Domain-Specific Insights:</strong> Which models or frameworks excel in specialized
-                            contexts (e.g., finance, code, or research)? We analyze how the leaderboard evolves when
-                            filtered by domain, identifying salient performance patterns.</li>
-                        <li><strong>Win Rate Analysis:</strong> We detail the influence of model-tool pairings—code
-                            interpreters, search engines, and more—and explain why the correct synergy 🔑 can lead to
-                            substantially higher win rates.</li>
+                        <li><strong>Analysis of Models:</strong> What drives the success of models like Llama-70B and Open-Mixtral-8x7B? How do they compare to lower-performing models such as Llama-3.1-8B-Instruct and Gemini-1.5-Pro-002?</li>
+                        <li><strong>Domain-Specific Insights:</strong> Which models or frameworks excel in specialized contexts (e.g., finance, code, or research)? We examine how leaderboard rankings shift when filtered by domain, revealing distinct performance patterns.</li>
+                        <li><strong>Win Rate Analysis:</strong> How do model-tool pairings, such as code interpreters or search engines, influence performance? We explore how the right synergy 🔑 significantly enhances win rates.</li>
                     </ul>
                     <p>
-                        We further showcase instances in which two agents converge on the same correct solution but via
-                        distinct reasoning styles 🤔, as well as cases of pronounced disagreement that underscore the
-                        significance of deep reasoning. Let us now proceed with a thorough examination of the new data
-                        and the key insights it reveals.
+                        This overview helps pinpoint where certain agents excel, why they might fail, and how researchers can strategically pair models and tools to build more effective, context-aware language model agents.
                     </p>
                 </div>
+                
+
+
               
 
                 <h2 id="analysis-of-models">🔎 Analysis of Models</h2>
@@ -1162,10 +1147,13 @@
               
                               <h2 id="conclusion">🎉 Conclusion</h2>
                               <p>
-                                  By examining agent behavior in specific <strong>domains</strong>, analyzing <strong>model/tool pairings</strong>, and studying real examples of success and failure, we acquire a deeper understanding of how LLM agents perform in practice. Models like <strong>Llama-70B</strong> stand out for their multi-step reasoning, while <strong>Gemini-1.5</strong> unexpectedly excels in code interpretation tasks when paired with the right tools.
+                                  This updated dataset and analysis underscore how models, frameworks, and tools can dramatically impact an agent’s ability to solve tasks. By comparing performance within domains like search, code interpretation, or knowledge retrieval, we see varied strengths and limitations across different configurations. These findings are not exhaustive; instead, they open the door to multiple ways of dissecting performance—whether by specific tasks, tool usage patterns, or user-defined criteria.
                               </p>
                               <p>
-                                  We invite researchers and practitioners alike to explore the newly released dataset, test different model-tool combinations, and submit further tasks to Agent Arena. By continuously refining the interplay between models, tools, and frameworks, the community can drive the development of more robust and versatile LLM agents.
+                                  Looking ahead, one promising avenue for refinement is in how we <strong>collect and interpret battle data</strong>. Allowing users to submit custom prompts and to indicate which component (e.g., model, tool, or framework) they believe caused an agent’s failure could yield more precise insights into performance bottlenecks. These user-driven annotations would help the community pinpoint systematic flaws and tailor improvements more effectively.
+                              </p>
+                              <p>
+                                  We encourage practitioners to explore the newly released data, engage with the interactive notebook, and contribute further ratings or categories. By iterating on these approaches and expanding user participation, we can continue to evolve the Agent Arena into a richer, more comprehensive resource for developing next-generation LLM agents.
                               </p>
               
                               <hr class="post-separator" />
@@ -1177,7 +1165,7 @@
                                   <pre class="citation-block"><code>@inproceedings{agent-arena-v2,
                 title={Agent Arena V2: Updated Dataset Release},
                 author={Nithik Yekollu and Arth Bohra and Ashwin Chirumamilla and Kai Wen and
-                        Sai Kolasani and Wei-Lin Chiang and Anastasios Angelopoulos and
+                        Sai Kolasani and Shreyas Rana and Wei-Lin Chiang and Anastasios Angelopoulos and
                         Joseph Gonzalez and Ion Stoica and Shishir G. Patil},
                 year={2025},
                 howpublished={\url{https://gorilla.cs.berkeley.edu/blogs/agent_arena_v2_release.html}}
