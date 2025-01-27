@@ -776,39 +776,129 @@
                               </p>
               
                               <!-- Model/Tool Pairings -->
-                              <h2 id="model-tool-pairings">⚙️ Model/Tool Pairings</h2>
+                              
+                              <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                                <h2 id="model-tool-pairings" style="margin-top: 0; color: #3f51b5;">⚙️ Model/Tool Pairings</h2>
+                                <p>
+                                    Analyzing large language model (LLM) agents requires isolating components like models, frameworks, or tools to better understand their behavior and effectiveness. In this study, we evaluated model and tool performance by calculating win rates across various domains. By fixing one component—such as a tool—and varying others, we assessed how well models utilized specific tools to produce coherent and accurate outputs, offering actionable insights into their relative strengths.
+                                </p>
+                                
+                                <p>
+                                    We grouped tools into specific categories, such as <span style="color: #7986cb;">Search Engines</span>, <span style="color: #ffb74d;">Knowledge Bases</span>, <span style="color: #ffab91;">Simple Math</span>, <span style="color: #ff8a65;">Math/CS Academic Search</span>, and <span style="color: #5d99c6;">Code Interpreter</span>. For each category, we computed model win rates across all relevant tools to identify consistent strengths. Similarly, we calculated tool win rates by measuring their effectiveness across competing models. These analyses provided insights into how models and tools perform across diverse domains.
+                                </p>
+                                
+                                <p>
+                                    Our methodology involved fixing tools or categories and running controlled comparisons of models. For example, fixing the tool <em>Google-Serper</em> allowed us to evaluate how models like GPT-4 and Claude performed in search engine tasks. Similarly, grouping tools under <span style="color: #ff8a65;">Math/CS Academic Search</span> helped us assess models' domain-specific strengths.
+                                </p>
+                                
+                                <p>
+                                    By establishing metrics like win rates for tools and aggregated categories, we identified patterns in model and tool performance. These findings offer a data-driven framework for selecting optimal pairings when designing and evaluating future LLM-based agents.
+                                </p>
+                              </div>
+                              
+                              <div style="border-left: 4px solid #7986cb; padding-left: 15px; margin-bottom: 20px; background: #fafafa;">
+                                <h4 id="model-search-engine-tools" style="margin-top: 0; color: #3f51b5;">Model + Search Engine Tools</h4>
+                                <p>
+                                    <em><strong>Llama-3.1-70B-Instruct</strong> achieves the highest win rate when paired with search engine tools.</em><br/>
+                                    <strong>Win Rate:</strong> <em>58.44%</em>
+                                </p>
+                                <ul>
+                                    <li><strong>Top Performers:</strong> Llama-3.1-70B-Instruct (58.44%), Claude-3-Opus-20240229 (57.83%), and Open-Mixtral-8x7B (57.65%) consistently turn search results into strong answers.</li>
+                                    <li><strong>Mid-Range:</strong> GPT-4-Turbo-2024-04-09 (~54%) is reliable but not as dominant.</li>
+                                    <li><strong>Lower Tier:</strong> Gemini-1.5-Flash-001 (36.42%) struggles with effective integration of search results.</li>
+                                </ul>
+                                <p style="text-align: center;">
+                                    <img src="../assets/img/blog_post_15_search_engine.png" alt="Search Engine Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
+                                    <br/><em style="font-size:0.9em;">Figure 1. Win rates with search engine tools.</em>
+                                </p>
+                              </div>
+                              
+                              <div style="border-left: 4px solid #5d99c6; padding-left: 15px; margin-bottom: 20px; background: #fafafa;">
+                                <h4 id="model-code-interpreter-tools" style="margin-top: 0; color: #3f51b5;">Model + Code Interpreter Tools</h4>
+                                <p>
+                                    <em><strong>Claude-3.5-Sonnet-20240620</strong> stands out with code interpreter tools.</em><br/>
+                                    <strong>Win Rate:</strong> <em>61.54%</em>
+                                </p>
+                                <ul>
+                                    <li><strong>Dominant:</strong> Claude-3.5-Sonnet-20240620 (61.54%) excels at code execution and debugging.</li>
+                                    <li><strong>High Performers:</strong> Llama-3.1-405B-Instruct (55.56%) and GPT-4-Turbo-2024-04-09 (55.26%).</li>
+                                    <li><strong>Lowest Performers:</strong> GPT-4-2024-08-06 (17.14%) struggles most.</li>
+                                </ul>
+                                <p style="text-align: center;">
+                                    <img src="../assets/img/blog_post_15_code_interpreter.png" alt="Code Interpreter Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
+                                    <br/><em style="font-size:0.9em;">Figure 2. Win rates with code interpreter tools.</em>
+                                </p>
+                              </div>
+                              
+                              <div style="border-left: 4px solid #ff8a65; padding-left: 15px; margin-bottom: 20px; background: #fafafa;">
+                                <h4 id="model-math-cs-academic-search-tools" style="margin-top: 0; color: #3f51b5;">Model + Math/CS Academic Search Tools</h4>
+                                <p>
+                                    <em><strong>Claude-3-Opus-20240229</strong> takes the lead in handling academic Math/CS queries.</em><br/>
+                                    <strong>Win Rate:</strong> <em>55.91%</em>
+                                </p>
+                                <ul>
+                                    <li><strong>Strongest:</strong> Claude-3-Opus-20240229 (55.91%).</li>
+                                    <li><strong>Close Contenders:</strong> Llama-3.1-70B-Instruct (52.22%) and Open-Mixtral-8x7B (52.13%).</li>
+                                    <li><strong>Mid-50% Cluster:</strong> GPT-4-Turbo-2024-04-09 and others hover around 50%.</li>
+                                    <li><strong>Lower Tier:</strong> Some models dip to the mid-30s, indicating difficulties with advanced academic queries.</li>
+                                </ul>
+                                <p style="text-align: center;">
+                                    <img src="../assets/img/blog_post_15_math_cs_academic_search.png" alt="Math/CS Academic Search Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
+                                    <br/><em style="font-size:0.9em;">Figure 3. Win rates with Math/CS academic search tools.</em>
+                                </p>
+                              </div>
+                              
+                              <div style="border-left: 4px solid #ffb74d; padding-left: 15px; margin-bottom: 20px; background: #fafafa;">
+                                <h4 id="model-knowledge-base-tools" style="margin-top: 0; color: #3f51b5;">Model + Knowledge Base Tools</h4>
+                                <p>
+                                    <em><strong>Claude-3-Opus-20240229</strong> ranks highest on knowledge base tasks.</em><br/>
+                                    <strong>Win Rate:</strong> <em>55.91%</em>
+                                </p>
+                                <ul>
+                                    <li><strong>Top:</strong> Claude-3-Opus-20240229 once again leads, at 55.91%.</li>
+                                    <li><strong>Next Tier:</strong> Llama-3.1-70B-Instruct (52.22%) and Open-Mixtral-8x7B (52.13%).</li>
+                                    <li><strong>Mid-Level:</strong> Several models land near 50%, showing decent but not standout knowledge retrieval.</li>
+                                    <li><strong>Weakest:</strong> Models at ~33–36% struggle with tool compatibility or domain coverage.</li>
+                                </ul>
+                                <p style="text-align: center;">
+                                    <img src="../assets/img/blog_post_15_knowledge_base.png" alt="Knowledge Base Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
+                                    <br/><em style="font-size:0.9em;">Figure 4. Win rates with knowledge base tools.</em>
+                                </p>
+                              </div>
+                              
+                              <div style="border-left: 4px solid #ffab91; padding-left: 15px; margin-bottom: 20px; background: #fafafa;">
+                                <h4 id="model-simple-math-tools" style="margin-top: 0; color: #3f51b5;">Model + Simple Math Tools</h4>
+                                <p>
+                                    <em><strong>Claude-3-Opus-20240229</strong> tops simple math tasks as well.</em><br/>
+                                    <strong>Win Rate:</strong> <em>58.00%</em>
+                                </p>
+                                <ul>
+                                    <li><strong>Top:</strong> Claude-3-Opus (58.00%), Open-Mixtral-8x7B (57.89%), Llama-3.1-405B (57.63%).</li>
+                                    <li><strong>Moderate:</strong> GPT-4-Turbo variants (mid- to high-50s) handle arithmetic reliably.</li>
+                                    <li><strong>Lowest:</strong> Gemini-1.5-Flash models (below 40%) show weaker consistency in calculations.</li>
+                                </ul>
+                                <p style="text-align: center;">
+                                    <img src="../assets/img/blog_post_15_simple_math.png" alt="Simple Math Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
+                                    <br/><em style="font-size:0.9em;">Figure 5. Win rates with simple math tools.</em>
+                                </p>
+                              </div>
+                              
+                              <hr style="border: 1px solid #ddd; margin: 20px 0;" />
+                              <h3 id="conclusion-model-tool-pairings" style="text-align: center; font-weight: bold; font-size: 1.5em;">🔎 Next Steps: Diving Deeper into Model/Tool Pairings</h3>
                               <p>
-                                  When evaluating the performance of LLM agents, isolating one of the three agent components—model, framework, or tool—can yield valuable insights. For instance, fixing a particular tool (e.g., <em>Google-Serper</em>) clarifies how effectively different models leverage that resource to produce coherent and accurate outputs.
+                                  Our analysis of model and tool pairings has illuminated significant patterns of strengths, weaknesses, and variability across different categories. While the win rates provide valuable insights into relative performance, they represent only a quantitative snapshot of the broader picture. 
                               </p>
                               <p>
-                                  By comparing agents on a subset of fixed tools, we can identify which models excel at certain tasks and generate insights into model selection when building new agents. Here are two examples:
-                              </p>
-              
-                              <h4>Model + Search Engine Tools</h4>
-                              <p>
-                                  <em><strong>Llama-70B</strong> tops the leaderboards for overall usage of search tools like Google-Serper and Brave-Search (min. 5 battles)</em><br/>
-                                  <strong>Llama-70B Win Rate:</strong> <em>60.27% across all domains</em>
+                                  To further explore the dynamics underlying these results, the next step involves examining specific battle examples. By analyzing how top-performing and lower-performing agents handle tasks within each category, we aim to uncover actionable insights into the drivers of success and the challenges contributing to failure. This deeper exploration will also provide clarity on how models interact with specific tools and domains, further refining our understanding of optimal pairings for future applications.
                               </p>
                               <p>
-                                  In this pairing, we fixed the tool subset to all five search engine tools in the Agent Arena ecosystem (<em>Google-Serper, Brave-Search, Tavily-Search, You-Search,</em> and <em>Exa-Search</em>). We found that <em>Llama-3.1-70B</em> performs the best, with a win rate of <strong>60.27%</strong>, followed by <em>Open-Mixtral-8x7B</em> (<strong>58.33%</strong>) and <em>Claude-3-Opus</em> (<strong>57.32%</strong>).
+                                  The next section will focus on concrete examples of individual battles, highlighting key factors such as model-tool interactions, response quality, and category-specific performance trends. This granular approach will shed light on the nuances that are often overlooked in aggregate metrics, offering a more comprehensive view of LLM agent behavior and effectiveness.
                               </p>
-                              <p style="text-align: center;">
-                                  <img src="../assets/img/blog_post_15_search_engine.png" alt="Search Engine Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
-                                  <br/><em style="font-size:0.9em;">Figure 1. Win rates for models using search engine tools.</em>
-                              </p>
-              
-                              <h4>Model + Code Interpreter Tools</h4>
-                              <p>
-                                  <em><strong>Gemini-1.5</strong> tops the leaderboards for code interpreter tools like Riza Code Interpreter and Python REPL (min. 5 battles)</em><br/>
-                                  <strong>Gemini-1.5 Win Rate:</strong> <em>75.00% across all domains</em>
-                              </p>
-                              <p>
-                                  By restricting the tool subset to code interpreter tools (<em>Riza Code Interpreter, OpenAI Assistant Code Interpreter, Python REPL,</em> and <em>LlamaIndex Code Interpreter</em>), <em>Gemini-1.5</em> surprisingly comes out ahead, achieving a <strong>75%</strong> success rate. It outperforms <em>Claude-3.5-Sonnet</em> (<strong>66.67%</strong>) and <em>Open-Mixtral-8x22B</em> (<strong>60.00%</strong>).
-                              </p>
-                              <p style="text-align: center;">
-                                  <img src="../assets/img/blog_post_15_code_interpreter.png" alt="Code Interpreter Win Rates" style="width:80%; border:1px solid #ddd; border-radius:8px; margin-bottom:5px;">
-                                  <br/><em style="font-size:0.9em;">Figure 2. Win rates for models using code interpreter tools.</em>
-                              </p>
+                              
+                              
+                              
+
+
               
                               <!-- Example Insights by Category -->
                               <h2 id="example-insights">📝 Example Insights by Category</h2>
